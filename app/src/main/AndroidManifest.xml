@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.academy_intern.sampledesign">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcherlogo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAVqECku2gSpndmTEev7Th2dJoBIQQH6ds" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity android:name=".Activities.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activities.HomeActivity" />
+        <activity android:name=".Activities.AdminDashboard" />
+        <activity android:name=".Activities.EventHistory" />
+        <activity android:name=".Activities.MainActivity" />
+        <activity android:name=".Activities.EditProfile" />
+        <activity android:name=".Activities.Welcome" />
+        <activity android:name=".Activities.UserProfileForAdmin" />
+        <activity android:name=".Activities.UserDocuments" />
+        <activity android:name=".Activities.AddEvent" />
+        <activity android:name=".Activities.ExpandableList" />
+        <activity android:name=".Activities.SubscribeToAnEvent">
+            <intent-filter>
+                <action android:name="com.example.academy_intern.sampledesign.Services_TARGET_NOTIFICATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Firebase Service -->
+        <service android:name=".Services.MyFCMClass">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".Activities.ProgressActivity" />
+        <activity android:name=".Activities.DocumentViewer" />
+        <activity android:name=".Activities.UserDashboard" />
+        <activity android:name=".Activities.Profile" />
+        <activity android:name=".Activities.Event_Profile" />
+        <activity android:name=".Activities.BusinessCertificate" />
+        <activity android:name=".Activities.UserEventDocuments"></activity>
+        <activity android:name=".Activities.AddAdminActivity"></activity>
+    </application>
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        android:required="false" />
+
+</manifest>

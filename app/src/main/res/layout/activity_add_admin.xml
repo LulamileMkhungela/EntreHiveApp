@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Activities.AddAdminActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <android.support.v7.widget.Toolbar
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/gradientColor" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:text=" Add Admin"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/btn_back_to_admin"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="9dp"
+        android:background="@drawable/back_arrow" />
+    </RelativeLayout>
+
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/gray"
+        android:layout_marginTop="9dp"
+
+        android:hint="Enter Name"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+
+        android:textColor="@color/gray"
+
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+
+        android:textColor="@color/gray"
+        android:hint="Enter Mobile Number"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextDob"
+        android:layout_width="match_parent"
+        android:textColor="@color/gray"
+        android:layout_marginTop="9dp"
+
+        android:layout_height="wrap_content"
+        android:hint="Enter Date of Birth (DD/MM/YYYY)"
+        android:inputType="date" />
+
+    <EditText
+        android:id="@+id/editTextAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Age"
+        android:layout_marginTop="9dp"
+
+        android:textColor="@color/gray"
+
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_add_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:layout_margin="55dp"
+        android:textSize="20dp"
+        android:background="@drawable/button_design"
+        android:text="Add As Admin" />
+
+</LinearLayout>

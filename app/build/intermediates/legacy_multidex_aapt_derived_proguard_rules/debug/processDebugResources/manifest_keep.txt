@@ -1,0 +1,2 @@
+# Referenced at /Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/merged_manifests/debug/processDebugManifest/merged/AndroidManifest.xml:27
+-keep class android.support.multidex.MultiDexApplication { <init>(...); }

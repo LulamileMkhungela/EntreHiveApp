@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tv_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="135dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/sign_in"
+            android:textColor="@color/textColor"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sign_in"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/icon_email"
+            android:drawablePadding="15dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            app:met_baseColor="@color/white"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/white"
+            app:met_singleLineEllipsis="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_email"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/icon_person"
+            android:drawablePadding="15dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            app:met_baseColor="@color/white"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/white"
+            app:met_singleLineEllipsis="true" />
+
+        <TextView
+            android:id="@+id/tv_forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_password"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_alignParentEnd="true"
+            android:text="@string/forgot_password"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:layout_alignParentRight="true" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_forgot_password"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="15dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button_design"
+            android:text="@string/login"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_login"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/login_question"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:layout_alignParentRight="true" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

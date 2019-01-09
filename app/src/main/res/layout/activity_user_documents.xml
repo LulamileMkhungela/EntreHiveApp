@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/btn_back_to_profile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorNavIcon">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="9dp"
+            android:background="@drawable/back_arrow"
+            />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Document(s)"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fff"
+            android:textStyle="bold"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+
+    <!--<ProgressBar-->
+    <!--android:id="@+id/pb"-->
+    <!--android:layout_width="250dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@id/toolbar"-->
+    <!--style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"-->
+    <!--/>-->
+
+    <ListView
+        android:id="@+id/simpleListView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/colorNavIcon"
+        android:dividerHeight="1dp" />
+</LinearLayout>

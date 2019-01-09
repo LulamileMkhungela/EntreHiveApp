@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newBackground"
+    tools:context=".Activities.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/gradientColor" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="Business Profile"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/toolBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="9dp"
+            android:background="@drawable/back_arrow" />
+
+    </RelativeLayout>
+
+    <!--<Button-->
+        <!--android:id="@+id/toolBack"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginLeft="9dp"-->
+        <!--android:background="@drawable/back_arrow" />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+
+        <TextView
+            android:id="@+id/tv_business_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="Business Certificate"
+            android:textColor="@color/textColor"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+
+
+        <TextView
+            android:id="@+id/tv_attach_file"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/tv_business_profile"
+            android:drawableLeft="@drawable/attach"
+            android:text="Click to browse for file"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+
+
+            />
+
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_attach"-->
+        <!--android:layout_width="30dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:layout_below="@+id/tv_business_profile"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:layout_toLeftOf="@+id/tv_ck_document"-->
+        <!--android:background="@drawable/attach" />-->
+
+        <TextView
+            android:id="@+id/tv_ck_document"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_business_profile"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="50dp"
+            android:drawablePadding="1dp"
+            android:hint="Ck Document"
+            android:textColor="@color/white"
+            android:textColorHint="    #696969"
+            android:textSize="17sp" />
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_Upload"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:layout_toRightOf="@+id/tv_ck_document"-->
+        <!--android:layout_below="@+id/tv_business_profile"-->
+        <!--android:layout_marginLeft="110dp"-->
+        <!--android:text="Browse"-->
+        <!--/>-->
+
+
+        <Button
+            android:id="@+id/btn_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ck_document"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/button_design"
+            android:text="@string/upload_btn"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

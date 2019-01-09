@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/newBackground"
+    tools:context=".Activities.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+
+        <TextView
+            android:id="@+id/tv_sign_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/sign_up"
+            android:textColor="@color/textColor"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_id_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_sign_up"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/icon_person"
+            android:drawablePadding="15dp"
+            android:hint="@string/id_no"
+            android:inputType="number"
+            app:met_baseColor="@color/white"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/white"
+            app:met_singleLineEllipsis="true" />
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_id_number"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/icon_person"
+            android:drawablePadding="15dp"
+            android:hint="@string/pname"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            app:met_baseColor="@color/white"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/white"
+            app:met_singleLineEllipsis="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_name"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/icon_email"
+            android:drawablePadding="15dp"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            app:met_baseColor="@color/white"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/white"
+            app:met_singleLineEllipsis="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_email"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/icon_lock"
+            android:drawablePadding="15dp"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            app:met_baseColor="@color/white"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/white"
+            app:met_singleLineEllipsis="true" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_confirm_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_password"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableLeft="@drawable/icon_lock"
+            android:drawablePadding="15dp"
+            android:hint="@string/confirm_pass"
+            android:inputType="textPassword"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            app:met_baseColor="@color/white"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/white"
+            app:met_singleLineEllipsis="true" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_confirm_pass"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="1dp"
+            android:textAllCaps="false"
+            android:background="@drawable/button_design"
+            android:text="@string/register"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_register"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/register_question"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:layout_alignParentRight="true" />
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

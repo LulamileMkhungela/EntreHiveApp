@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/profile_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Activities.UserProfileForAdmin"
+    >
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/gradientColor" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text=" Profile"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn_back_to_admin"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="9dp"
+            android:background="@drawable/back_arrow" />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/toolbar">
+        <ImageView
+            android:id="@+id/header_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop" />
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-130dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:padding="20dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user"
+            app:civ_border_color="#FFFFFFFF"
+            app:civ_border_width="3dp" />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Luxman Marothi"
+            android:textColor="@color/gray"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:textColor="@color/gray"
+            android:layout_gravity="center"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_company_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:layout_gravity="center"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/profile_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout"
+        >
+        <LinearLayout
+            android:id="@+id/center_row"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:paddingTop="5dp"
+                android:background="@drawable/boarder2"
+                android:gravity="center"
+                android:paddingBottom="5dp">
+                <TextView
+                    android:id="@+id/points"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="50"
+                    android:inputType="number"
+                    android:textSize="24sp"
+                    android:textColor="@color/gray" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Balance"
+                    android:textColor="@color/gray"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:background="@drawable/boarder2"
+                android:paddingBottom="5dp">
+                <ImageView
+                    android:id="@+id/iv_documents"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:src="@drawable/download_file"
+                    />
+                <TextView
+                    android:id="@+id/tv_documents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:textColor="@color/gray"
+                    android:text="View file"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/middle_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/center_row"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Identity Number"
+                    android:textColor="@color/gray"
+                    android:textSize="13dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/text_idno"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/text_mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:textColor="@color/gray"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/text_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/gray"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            >
+            <Button
+                android:id="@+id/btn_reject"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@drawable/button_design"
+                android:text="Reject"
+                android:textAllCaps="false"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="7dp"
+                android:textColor="@color/textColor"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/btn_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginRight="7dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/button_design"
+                android:text="Accept"
+                android:textAllCaps="false"
+                android:layout_centerVertical="true"
+                android:textColor="@color/textColor"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

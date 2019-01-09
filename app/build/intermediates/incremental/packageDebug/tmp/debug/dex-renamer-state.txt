@@ -1,0 +1,7 @@
+#Wed Jan 09 15:23:23 SAST 2019
+base.0=/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/transforms/dexMerger/debug/0
+path.1=classes2.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/transforms/dexMerger/debug/0

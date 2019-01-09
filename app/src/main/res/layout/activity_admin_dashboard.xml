@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+
+    tools:context=".Activities.AdminDashboard">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/gradientColor">
+
+        <Button
+            android:id="@+id/btn_profile_admin"
+            android:layout_width="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/ic_menu_black_24dp" />
+
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="search"
+            android:paddingTop="15sp"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="70dp"
+            android:layout_marginEnd="70dp"
+            android:textSize="12dp"
+            android:layout_centerVertical="true" />
+
+        <Button
+            android:id="@+id/btnSearch"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/search"
+            android:textColor="@color/white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"/>
+
+        <Button
+            android:id="@+id/btn_notification"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bells" />
+
+    </RelativeLayout>
+
+
+    <FrameLayout
+        android:id="@+id/admin_frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:animateLayoutChanges="true">
+
+    </FrameLayout>
+
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/gray"
+        app:itemIconTint="@color/white"
+        app:itemTextColor="@color/textColor"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/admin_navigation" />
+
+
+    <!--<android.support.design.widget.BottomNavigationView-->
+    <!--android:id="@+id/navigation"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/gradientColor"-->
+    <!--app:itemIconTint="@color/white"-->
+    <!--app:itemTextColor="@color/textColor"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:menu="@menu/admin_navigation"/>-->
+
+
+
+</android.support.constraint.ConstraintLayout>

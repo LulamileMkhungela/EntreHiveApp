@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    tools:context="com.example.academy_intern.sampledesign.Fragment.Admin_Points">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/balance_text"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="7dp"
+            android:text="Balance:"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+        <TextView
+
+            android:id="@+id/txtBalance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="5000"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            />
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Cash in Points"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtPointInRands"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@color/colorNavIcon"
+            android:inputType="numberDecimal"
+            app:layout_constraintTop_toBottomOf="@id/textView3" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txtPointInRands"
+            android:layout_margin="11dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/button_design"
+            android:text="Save"
+
+            android:textAllCaps="false"
+            android:textColor="@color/textColor"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

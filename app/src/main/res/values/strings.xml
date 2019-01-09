@@ -1,0 +1,85 @@
+<resources>
+    <!--<string name="app_name">SampleDesign</string>-->
+    <string name="app_name">EntreHive</string>
+    <string name="pname">Name</string>
+    <string name="surname">Surname</string>
+    <string name="id_no">ID number</string>
+    <string name="phone_number">Phone number</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_pass">Confirm password</string>
+    <string name="item_name">Item Name</string>
+    <string name="item_price">Item Price</string>
+    <string name="first_name">First Name</string>
+    <string name="upload">Upload ID copy</string>
+    <string name="upload_btn">Upload</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="send_email">Send Email Address</string>
+    <string name="send_reset_code">Send Reset Code</string>
+    <string name="btn_send_reset_code">Send Reset Code</string>
+    <string name="login">Sign In</string>
+    <string name="submit">Submit</string>
+    <string name="btn_send_email">Send Email</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="add_items">Add Items</string>
+    <string name="reset_code">Reset Code</string>
+    <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_generate_qr_code">Generate QR Code</string>
+    <string name="register">Sign Up</string>
+    <string name="profile">Profile</string>
+    <string name="notification">Notification</string>
+    <string name="history">History</string>
+    <string name="create_event">Create Event</string>
+    <string name="event_history">Event History</string>
+    <string name="transaction_history">Transaction History</string>
+    <string name="scan">Scan</string>
+    <string name="event_date">Date</string>
+    <string name="event_time">Time</string>
+    <string name="subject">Subject</string>
+    <string name="event_description">Description</string>
+    <string name="event_title">Title</string>
+    <string name="create">Create</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login_question">Don\'t have an account? Register</string>
+    <string name="register_question">Already have an account? Login</string>
+    <string name="get_started">Get Started</string>
+
+
+    <!--list of categories of bottom navigation-->
+
+    <string name="title_events">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="search">search</string>
+    <string name="status">Status</string>
+
+    <string name="EntreHive">Intro Slider</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">Get Started</string>
+
+    <string name="slide_1_title">Create Account</string>
+    <string name="slide_1_desc">Create an account to get started!</string>
+
+    <string name="slide_2_title">Approval</string>
+    <string name="slide_2_desc">Upload necessary documents for security reasons and thereafter the admin will verify and load your account with points </string>
+
+    <string name="slide_3_title">Great Events</string>
+    <string name="slide_3_desc">Attend awesome events where you can up-skill yourself or create one of your own events. You can also see event history</string>
+
+    <string name="slide_4_title">Earn Points</string>
+    <string name="slide_4_desc">Attend as many events and earn points you can use to purchase cool items</string>
+
+    <string name="slide_5_title">Scan</string>
+    <string name="slide_5_desc">Scan qr codes to earn points, get access to events and purchase items</string>
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="ok">Ok</string>
+    <string name="location">Location</string>
+</resources>
