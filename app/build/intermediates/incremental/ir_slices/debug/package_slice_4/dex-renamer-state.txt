@@ -1,4 +1,0 @@
-#Wed Jan 09 10:01:16 SAST 2019
-base.0=/Users/academy_intern/Desktop/rigs/entrehiveandroid/app/build/intermediates/transforms/dexMerger/debug/4
-path.0=classes.dex
-renamed.0=classes.dex
