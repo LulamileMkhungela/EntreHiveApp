@@ -22,7 +22,7 @@
             android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginRight="40dp"
-            android:background="@drawable/ic_menu_black_24dp" />
+            android:background="@drawable/menu" />
 
 
         <EditText

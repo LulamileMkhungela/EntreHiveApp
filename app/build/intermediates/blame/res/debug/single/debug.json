@@ -2388,6 +2388,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9b03c21b6f3980dbb6aef4a16e5e2f0b/res/layout-v16/notification_template_custom_big.xml"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_menu.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable/menu.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_abc_item_background_holo_light.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable/abc_item_background_holo_light.xml"
     },
@@ -2430,6 +2434,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fc4ad9e401e12358481ac34983bbc6ef/res/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_change_password.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/change_password.xml"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi_icon_edit.png.flat",

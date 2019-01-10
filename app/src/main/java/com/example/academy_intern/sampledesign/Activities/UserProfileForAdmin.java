@@ -20,6 +20,7 @@ import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,8 +30,10 @@ public class UserProfileForAdmin extends AppCompatActivity
     TextView tvName, tvIdNumber, tvEmail, tvPhoneNumber, tvDocuments, tvCurrentPoints, tvCompanyName, tvCompanyNumber;
     ImageView ivPhoto, ivDocuments;
     Button btnAccept, btnReject, btnBack;
+    ProgressDialog activateProgress;
 
     int userId;
+    boolean userStatus;
     String name, email, idNumber, phoneNumber, companyName, companyNumber,
             currentPoints, photoPath, deviceToken;
 
@@ -42,17 +45,18 @@ public class UserProfileForAdmin extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_adminprofile);
 
+        activateProgress = new ProgressDialog(this);
+
         /*The user's email address is received from a different class, UserAdapter. This is done to ensure that
         * when the admin clicks the cardview of a particular user, the profile of that particular
         * user is shown. */
 
         UserProfile user = getUserDetails();
 
-
-
         userId = user.getUserId();
         name = user.getName();
         email = user.getEmail();
+        userStatus = user.getActive();
         currentPoints = String.valueOf(user.getPoints());
         idNumber = user.getIdentityNumber();
         companyName = user.getCompanyName();
@@ -61,23 +65,9 @@ public class UserProfileForAdmin extends AppCompatActivity
         photoPath = user.getPhotoPath();
         deviceToken = user.getDeviceToken();
 
-        // Set up progress before call
-        final ProgressDialog progressDialog;
-        progressDialog = new ProgressDialog(UserProfileForAdmin.this);
-        progressDialog.setMax(100);
-        progressDialog.setMessage("Its loading....");
-        progressDialog.setTitle("ProgressDialog bar example");
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-        // show it
-        progressDialog.show();
-
         initialiseWidgets();
 
         setUserProfile();
-
-        progressDialog.dismiss();
-
-
 
         ivDocuments.setOnClickListener(new View.OnClickListener()
         {
@@ -117,7 +107,16 @@ public class UserProfileForAdmin extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                acceptRegistration();
+                if (userStatus)
+                {
+                    Toast.makeText(getApplicationContext(), "User is already active.", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    activateProgress.setMessage("Please wait...");
+                    activateProgress.show();
+                    acceptRegistration();
+                }
             }
         });
 
@@ -164,23 +163,34 @@ public class UserProfileForAdmin extends AppCompatActivity
         {
             String message = "Your registration has been approved.";
 
-            Call <String> call = Api.getClient().acceptRegistration(userId, deviceToken, message);
+            Call <UserProfile> call = Api.getClient().acceptRegistration(userId, deviceToken, message);
 
 
-            call.enqueue(new Callback <String>()
+            call.enqueue(new Callback <UserProfile>()
             {
 
                 @Override
-                public void onResponse(Call <String> call, Response <String> response)
+                public void onResponse(Call <UserProfile> call, Response <UserProfile> response)
                 {
                     Log.v("this", "Yes!");
-                    Toast.makeText(getApplicationContext(), "User has been approved.", Toast.LENGTH_SHORT).show();
+                    if (response.body().getName() != null)
+                    {
+                        activateProgress.dismiss();
+                        Toast.makeText(getApplicationContext(), "User's account has been activated.", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        activateProgress.dismiss();
+                        Toast.makeText(getApplicationContext(), "For some unknown reason, the user's account has not been activated.", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
                 @Override
-                public void onFailure(Call <String> call, Throwable t) {
+                public void onFailure(Call <UserProfile> call, Throwable t) {
                     // close it after response
                     Log.v("this", "No Response!");
+                    activateProgress.dismiss();
+                    Toast.makeText(getApplicationContext(), "Unable to reach the server. Please try again later.", Toast.LENGTH_SHORT).show();
                 }
             });
 

@@ -143,7 +143,7 @@ public class Registration extends Fragment {
                 String successMessage = response.body().getName() + ", you have been registered!";
                 String failMessage = "You are already registered!";
 
-                if (response.body().getName() != null)
+                if (response.code() == 200)
                 {
                     USER_BALANCE = response.body().getPoints();
 

@@ -307,10 +307,10 @@ activity#com.example.academy_intern.sampledesign.Activities.Profile
 ADDED from /Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/AndroidManifest.xml:58:9-56
 	android:name
 		ADDED from /Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/AndroidManifest.xml:58:19-53
-activity#com.example.academy_intern.sampledesign.Activities.Event_Profile
-ADDED from /Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/AndroidManifest.xml:59:9-62
+activity#com.example.academy_intern.sampledesign.Activities.EventProfileForAdmin
+ADDED from /Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/AndroidManifest.xml:59:9-69
 	android:name
-		ADDED from /Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/AndroidManifest.xml:59:19-59
+		ADDED from /Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/AndroidManifest.xml:59:19-66
 activity#com.example.academy_intern.sampledesign.Activities.BusinessCertificate
 ADDED from /Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/AndroidManifest.xml:60:9-68
 	android:name

@@ -56,7 +56,7 @@
         <activity android:name=".Activities.DocumentViewer" />
         <activity android:name=".Activities.UserDashboard" />
         <activity android:name=".Activities.Profile" />
-        <activity android:name=".Activities.Event_Profile" />
+        <activity android:name=".Activities.EventProfileForAdmin" />
         <activity android:name=".Activities.BusinessCertificate" />
         <activity android:name=".Activities.UserEventDocuments"></activity>
         <activity android:name=".Activities.AddAdminActivity"></activity>

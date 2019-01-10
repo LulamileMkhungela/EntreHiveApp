@@ -123,36 +123,4 @@ EditText searchBox;
         return true;
     }
 
-
-
-
-
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item)
-//    {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.add_admin)
-//        {
-//            Intent addAdminIntent = new Intent(AdminDashboard.this, AddAdminActivity.class);
-//            startActivity(addAdminIntent);
-//            return true;
-//        }
-//
-//        if (id == R.id.logout)
-//        {
-//            SessionManager sessionManager = new SessionManager(getApplicationContext());
-//            sessionManager.logoutUser();
-//            Intent logoutIntent = new Intent(getApplicationContext(), MainActivity.class);
-//            startActivity(logoutIntent);
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
-
 }

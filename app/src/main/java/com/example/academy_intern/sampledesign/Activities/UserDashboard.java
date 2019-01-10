@@ -33,6 +33,7 @@ public class UserDashboard extends AppCompatActivity
     FloatingActionButton mFab;
     BottomNavigationView bottomNavigationView;
     private static final int PERMISSION_REQUEST_CAMERA = 1;
+    private static final int PERMISSION_REQUEST_STORAGE = 1;
 
     @Override
 
@@ -46,6 +47,7 @@ public class UserDashboard extends AppCompatActivity
 
         openCamera();
 
+        accessDocuments();
 
         if (USER_BALANCE < 60)
         {
@@ -143,6 +145,17 @@ public class UserDashboard extends AppCompatActivity
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CAMERA},
                     PERMISSION_REQUEST_CAMERA);
+        }
+    }
+
+    private void accessDocuments()
+    {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED)
+        {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    PERMISSION_REQUEST_STORAGE);
         }
     }
 

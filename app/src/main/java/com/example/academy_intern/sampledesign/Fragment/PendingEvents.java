@@ -17,7 +17,7 @@ import android.widget.Filterable;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.academy_intern.sampledesign.Activities.Event_Profile;
+import com.example.academy_intern.sampledesign.Activities.EventProfileForAdmin;
 import com.example.academy_intern.sampledesign.ApiConnection.Api;
 import com.example.academy_intern.sampledesign.Model.EventProfile;
 import com.example.academy_intern.sampledesign.R;
@@ -99,7 +99,7 @@ public class PendingEvents extends android.support.v4.app.Fragment
         });
     }
 
-    /*The method, generateEventHistoryList, takes the arraylist which contains the event objects
+    /* The method, generateEventHistoryList, takes the array list which contains the event objects
      * and displays it in the RecyclerView. This is achieved by calling the EventAdapter class and
      * all the appropriate methods, such as setLayoutManager and setAdapter.*/
     public void generatePendingEventsList()
@@ -114,7 +114,7 @@ public class PendingEvents extends android.support.v4.app.Fragment
     public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecyclerViewAdapter.ViewHolder> implements Filterable {
         private ArrayList<EventProfile> mValues;
         private EventRecyclerViewAdapter.CustomFilter mFilter;
-        private String title, description, date, time, location, userId;
+        private String title, description, date, time, location, userId, eventId;
 
         public EventRecyclerViewAdapter(ArrayList<EventProfile> items) {
             mValues = items;
@@ -136,6 +136,7 @@ public class PendingEvents extends android.support.v4.app.Fragment
             time = " " + StringUtils.substring(pendingEvents.get(position).getEventDateTime(), 11,16);
             location = "Location: " + pendingEvents.get(position).getEventLocation();
             userId = String.valueOf(pendingEvents.get(position).getUserId());
+            eventId = String.valueOf(pendingEvents.get(position).getEventId());
 
             holder.tvTitle.setText(title);
             holder.tvDescription.setText(description);
@@ -143,6 +144,7 @@ public class PendingEvents extends android.support.v4.app.Fragment
             holder.tvTime.setText(time);
             holder.tvLocation.setText(location);
             holder.tvUserId.setText(userId);
+            holder.tvEventId.setText(eventId);
         }
 
         @Override
@@ -173,14 +175,13 @@ public class PendingEvents extends android.support.v4.app.Fragment
                 tvEventId = itemView.findViewById(R.id.tv_event_id);
                 tvUserId = itemView.findViewById(R.id.tv_user_id);
 
-
                 pendingEventsId = itemView.findViewById(R.id.pendingEventsId);
 
                 pendingEventsId.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
-                        String EventId = org.apache.commons.lang3.StringUtils.substringAfter(tvEventId.getText().toString(), "Event Id: ");
+                        String EventId = tvEventId.getText().toString();
                         String Description = org.apache.commons.lang3.StringUtils.substringAfter(tvDescription.getText().toString(), "Description: ");
                         String Date = org.apache.commons.lang3.StringUtils.substringAfter(tvDate.getText().toString(), "");
                         String Location = org.apache.commons.lang3.StringUtils.substringAfter(tvLocation.getText().toString(), "Location: ");
@@ -189,7 +190,7 @@ public class PendingEvents extends android.support.v4.app.Fragment
                         String userId = tvUserId.getText().toString();
 
 
-                        Intent profileIntent = new Intent(v.getContext(), Event_Profile.class);
+                        Intent profileIntent = new Intent(v.getContext(), EventProfileForAdmin.class);
 
                         profileIntent.putExtra("EventId", EventId);
                         profileIntent.putExtra("Time", Time);

@@ -66,9 +66,8 @@ public class SubscribeToAnEvent extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-
                 //Receives getClient instance from the Api
-                Call<Void> call = Api.getClient().subscribeToEvent(LOGGED_IN_USER_ID,event_id);
+                Call<Void> call = Api.getClient().subscribeToEvent(LOGGED_IN_USER_ID, event_id);
 
                 call.enqueue(new Callback<Void>()
                 {

@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -38,6 +39,7 @@ import static com.example.academy_intern.sampledesign.Activities.MainActivity.LO
 public class UserDocuments extends AppCompatActivity
 {
     ListView simpleList;
+    Button btnBack;
     public String downloadLink;
     ArrayList<String> listOfDocuments = new ArrayList <>();
     ArrayList<String> listOfDownloadLinks = new ArrayList <>();
@@ -53,6 +55,7 @@ public class UserDocuments extends AppCompatActivity
         setContentView(R.layout.activity_user_documents);
 
         simpleList = (findViewById(R.id.simpleListView));
+        btnBack = findViewById(R.id.btn_back);
         getDocumentNames();
         getDownloadLinks();
 
@@ -61,19 +64,19 @@ public class UserDocuments extends AppCompatActivity
         registerReceiver(onComplete,
                 new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserDocuments.super.onBackPressed();
+            }
+        });
 
-        if (!isStoragePermissionGranted())
-        {
 
-
-        }
-
-
-        /*The names of the documents are listed in a listview. If the admin desires to view the contents
+        /*The names of the documents are listed in a list view. If the admin desires to view the contents
         * of a particular document, he/she merely clicks on the document name. The download link for the
         * chosen document is stored in the array list, listOfDownloadLinks. The download link for the
         * chosen document has the array list index that is equal to the position of the chosen document
-        * in the listview. */
+        * in the list view. */
         simpleList.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
 
@@ -111,7 +114,7 @@ public class UserDocuments extends AppCompatActivity
 
     /*This method gets the names of the documents that the user has uploaded to the server. The document
     * names are strings that are stored in an array list. The names of the documents are displayed in a
-    * listview.*/
+    * list view.*/
     private void getDocumentNames()
     {
 
@@ -141,7 +144,7 @@ public class UserDocuments extends AppCompatActivity
         });
     }
 
-    /*This method gets the download links of the documents that the user has uploaded to the server. The download
+    /* This method gets the download links of the documents that the user has uploaded to the server. The download
      * links are strings that are stored in an array list. */
     private void getDownloadLinks()
     {
@@ -247,51 +250,6 @@ public class UserDocuments extends AppCompatActivity
 
         }
     }
-//    public void progressBar()
-//    {
-//        final TextView tv = (TextView) findViewById(R.id.tv);
-//        final ProgressBar pb = (ProgressBar) findViewById(R.id.pb);
-//        progressStatus = 0;
-//        // Visible the progress bar and text view
-//        pb.setVisibility(View.VISIBLE);
-//        tv.setVisibility(View.VISIBLE);
-//
-//        // Start the lengthy operation in a background thread
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                while(progressStatus < 100){
-//                    // Update the progress status
-//                    progressStatus +=1;
-//
-//                    // Try to sleep the thread for 20 milliseconds
-//                    try{
-//                        Thread.sleep(40);
-//                    }catch(InterruptedException e){
-//                        e.printStackTrace();
-//                    }
-//
-//                    // Update the progress bar
-//                    handler.post(new Runnable() {
-//                        @Override
-//                        public void run() {
-//                            pb.setProgress(progressStatus);
-//                            // Show the progress on TextView
-//                            tv.setText(progressStatus+"");
-//                            // If task execution completed
-//                            if(progressStatus == 100){
-//                                // Hide the progress bar from layout after finishing task
-//                                pb.setVisibility(View.GONE);
-//                                // Set a message of completion
-//                                tv.setText("Operation completed...");
-//                            }
-//                        }
-//                    });
-//                }
-//            }
-//        }).start(); // Start the operation
-//    }
-
 
     /*This method takes the user to the activity where the actual document can be viewed. The download
     * link is sent to the DocumentViewer, where the document can be viewed.*/

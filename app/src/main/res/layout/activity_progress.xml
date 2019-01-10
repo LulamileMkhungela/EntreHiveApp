@@ -7,7 +7,6 @@
     tools:context=".Activities.ProgressActivity">
 
     <ProgressBar
-
         android:id="@+id/circularProgressbar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="250dp"

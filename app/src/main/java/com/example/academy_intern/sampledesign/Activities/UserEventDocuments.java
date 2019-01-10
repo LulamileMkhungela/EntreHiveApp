@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -39,6 +40,7 @@ public class UserEventDocuments extends AppCompatActivity {
 
 
     ListView simpleList;
+    Button btnBack;
     public String downloadLink;
     ArrayList<String> listOfDocuments = new ArrayList <>();
     ArrayList<String> listOfDownloadLinks = new ArrayList <>();
@@ -57,6 +59,7 @@ public class UserEventDocuments extends AppCompatActivity {
 
 
         simpleList = (findViewById(R.id.simpleListView));
+        btnBack = findViewById(R.id.btn_back);
         getDocumentNames();
         getDownloadLinks();
 
@@ -65,15 +68,14 @@ public class UserEventDocuments extends AppCompatActivity {
         registerReceiver(onComplete,
                 new IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
-        if (!isStoragePermissionGranted())
-        {
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UserEventDocuments.super.onBackPressed();
+            }
+        });
 
-
-        }
-
-
-
-        /*The names of the documents are listed in a listview. If the admin desires to view the contents
+        /*The names of the documents are listed in a list view. If the admin desires to view the contents
          * of a particular document, he/she merely clicks on the document name. The download link for the
          * chosen document is stored in the array list, listOfDownloadLinks. The download link for the
          * chosen document has the array list index that is equal to the position of the chosen document

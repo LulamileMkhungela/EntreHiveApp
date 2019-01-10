@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.academy_intern.sampledesign.Activities.Event_Profile;
+import com.example.academy_intern.sampledesign.Activities.EventProfileForAdmin;
 import com.example.academy_intern.sampledesign.Model.EventProfile;
 import com.example.academy_intern.sampledesign.R;
 
@@ -99,7 +99,7 @@ public class PendingEventAdapter extends RecyclerView.Adapter<PendingEventAdapte
                     String Title = org.apache.commons.lang3.StringUtils.substringAfter(tvTitle.getText().toString(), "");
                     String Time = org.apache.commons.lang3.StringUtils.substringAfter(tvTime.getText().toString(), "Time: ");
 
-                    Intent profileIntent = new Intent(v.getContext(), Event_Profile.class);
+                    Intent profileIntent = new Intent(v.getContext(), EventProfileForAdmin.class);
 
                     profileIntent.putExtra("EventId", EventId);
                     profileIntent.putExtra("Time", Time);

@@ -18,6 +18,8 @@ import android.widget.Toast;
 
 import com.example.academy_intern.sampledesign.ApiConnection.Api;
 import com.example.academy_intern.sampledesign.FileUtils.FileUtils;
+import com.example.academy_intern.sampledesign.Fragment.ChangePassword;
+import com.example.academy_intern.sampledesign.Fragment.SendEmail;
 import com.example.academy_intern.sampledesign.Model.BaseResponse;
 import com.example.academy_intern.sampledesign.Model.UserProfile;
 import com.example.academy_intern.sampledesign.R;
@@ -45,7 +47,7 @@ public class EditProfile extends AppCompatActivity {
 
     Button btnBack, btnSaveChanges, btnCam, btnNext;
     EditText editMail,editNumber,editId,editName,editCompName,editCompNumber;
-    TextView textCurrentPoints, textTotalPoints, textUsedPoints;
+    TextView textCurrentPoints, textTotalPoints, textUsedPoints, tvChangePassword;
     int userId;
     String username, phoneNo, name, compName, compNumber, photoPath, idNo, currentPoints, totalPoints, usedPoints;
     public static String LOCAL_PHOTO_PATH;
@@ -75,6 +77,13 @@ public class EditProfile extends AppCompatActivity {
 
                 Intent profileIntent = new Intent(EditProfile.this, Profile.class);
                 startActivity(profileIntent);
+            }
+        });
+
+        tvChangePassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getFragmentManager().beginTransaction().replace(R.id.edit_frag_profile, new ChangePassword()).commit();
             }
         });
 
@@ -263,6 +272,7 @@ public class EditProfile extends AppCompatActivity {
         btnCam = findViewById(R.id.btnCamera);
         imageView = findViewById(R.id.profile_image);
         btnNext = findViewById(R.id.btn_next);
+        tvChangePassword = findViewById(R.id.tv_change_password);
     }
 
     private void initialiseVariables()

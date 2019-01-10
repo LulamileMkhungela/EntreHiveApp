@@ -44,6 +44,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -242,8 +243,8 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         yearFinal = year;
-        monthFinal = month + 1;
-        dayFinal = dayOfMonth;
+        monthFinal = Integer.valueOf(String.format(Locale.getDefault(),"%02d", month + 1));
+        dayFinal = Integer.valueOf(String.format(Locale.getDefault(),"%02d", dayOfMonth));
         Calendar c = Calendar.getInstance();
         hour = c.get(Calendar.HOUR_OF_DAY);
         minute = c.get(Calendar.MINUTE);
@@ -251,14 +252,16 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
         TimePickerDialog timePickerDialog = new TimePickerDialog(AddEvent.this,AddEvent.this,
                 hour,minute, android.text.format.DateFormat.is24HourFormat(this));
         timePickerDialog.show();
-        mdateTime.setText(yearFinal + "-" + monthFinal + "-" + dayFinal);
+        String fullDate = yearFinal + "-" + String.format(Locale.getDefault(), "%02d", monthFinal) + "-" + String.format(Locale.getDefault(), "%02d", dayFinal);
+        mdateTime.setText(fullDate);
     }
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute)
     {
         hourFinal = hourOfDay;
         minuteFinal = minute;
-        reminderTime.setText(hourFinal + ":" + minuteFinal);
+        String fullTime = String.format(Locale.getDefault(), "%02d", hourFinal) + ":" + String.format(Locale.getDefault(), "%02d", minuteFinal);
+        reminderTime.setText(fullTime);
     }
     public void createEvent()
     {

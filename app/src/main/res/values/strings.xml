@@ -7,7 +7,7 @@
     <string name="phone_number">Phone number</string>
     <string name="email">Email Address</string>
     <string name="password">Password</string>
-    <string name="confirm_pass">Confirm password</string>
+    <string name="confirm_pass">Confirm Password</string>
     <string name="item_name">Item Name</string>
     <string name="item_price">Item Price</string>
     <string name="first_name">First Name</string>
@@ -22,9 +22,14 @@
     <string name="submit">Submit</string>
     <string name="btn_send_email">Send Email</string>
     <string name="reset_password">Reset Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
     <string name="add_items">Add Items</string>
     <string name="reset_code">Reset Code</string>
     <string name="btn_reset_password">Reset Password</string>
+    <string name="btn_change_password">Change Password</string>
     <string name="btn_generate_qr_code">Generate QR Code</string>
     <string name="register">Sign Up</string>
     <string name="profile">Profile</string>

@@ -155,8 +155,9 @@ public class Login extends Fragment {
             {
 //                String successMessage = response.body().getName() + ", you have successfully logged in!";
                 String failMessage = "You have failed to log in! \nPlease try again.";
+                //response.body().getName() != null
 
-                if (response.body().getName() != null)
+                if (response.code() == 200)
                 {
                     USER_BALANCE = response.body().getPoints();
 
@@ -170,10 +171,8 @@ public class Login extends Fragment {
 
                     if(IS_USER_ADMIN)
                     {
-
                         Intent intent = new Intent(getActivity(), AdminDashboard.class);
                         startActivity(intent);
-
                     }
                     else
                         {

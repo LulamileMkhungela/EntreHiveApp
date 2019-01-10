@@ -37,7 +37,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/event/acceptEvent")
-    Call<Void> acceptEvent(@Field("EventId") String EventId,
+    Call<EventProfile> acceptEvent(@Field("eventId") String eventId,
                            @Field("number_of_people") String number_of_people);
 
     @FormUrlEncoded
@@ -101,6 +101,10 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("user/resetPassword")
     Call<UserProfile> resetPasswordProcess(@Field("resetToken") String resetToken, @Field("newPassword") String newPassword);
+
+    @FormUrlEncoded
+    @POST("user/changePassword")
+    Call<UserProfile> changePasswordProcess(@Field("userId") int userId, @Field("oldPassword") String oldPassword, @Field("newPassword") String newPassword);
 
     @FormUrlEncoded
     @POST("/user/checkBalance")
@@ -183,7 +187,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/user/updateStatus")
-    Call<String> acceptRegistration(@Field("userId") int userId, @Field("deviceToken") String deviceToken, @Field("message") String message);
+    Call<UserProfile> acceptRegistration(@Field("userId") int userId, @Field("deviceToken") String deviceToken, @Field("message") String message);
 
     @FormUrlEncoded
     @POST("/user/sendToUser")

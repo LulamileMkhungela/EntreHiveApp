@@ -1257,6 +1257,7 @@ drawable image_gradient
 drawable logo
 drawable logout
 drawable mask
+drawable menu
 drawable met_ic_clear
 drawable mini_background_color
 drawable mtrl_snackbar_background
@@ -1383,11 +1384,13 @@ id btn_toolB
 id btn_upload
 id buttonPanel
 id cancel_action
+id cardview
 id center
 id center_horizontal
 id center_row
 id center_vertical
 id chains
+id change_password
 id checkbox
 id chronometer
 id circularProgressbar
@@ -1448,6 +1451,8 @@ id et_item_price
 id et_location
 id et_message
 id et_name
+id et_new_password
+id et_old_password
 id et_password
 id et_reset_code
 id et_search
@@ -1668,6 +1673,7 @@ id tv
 id tv_add_items
 id tv_attach_file
 id tv_business_profile
+id tv_change_password
 id tv_ck_document
 id tv_company_name
 id tv_company_number
@@ -1701,6 +1707,7 @@ id tv_warning
 id txtBalance
 id txtPointInRands
 id txt_attach_file
+id txt_attendance_points
 id txt_date_time
 id txt_description
 id txt_location
@@ -1806,6 +1813,7 @@ layout admin_verification
 layout all_users
 layout app_bar
 layout business_profile
+layout change_password
 layout confirm_purchase
 layout create_event_screen
 layout dashboard_screen
@@ -1932,11 +1940,13 @@ string add_items
 string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
+string btn_change_password
 string btn_generate_qr_code
 string btn_reset_password
 string btn_send_email
 string btn_send_reset_code
 string cancel
+string change_password
 string character_counter_content_description
 string character_counter_pattern
 string common_google_play_services_enable_button
@@ -1958,6 +1968,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string confirm
+string confirm_new_password
 string confirm_pass
 string create
 string create_event
@@ -1990,9 +2001,11 @@ string location
 string login
 string login_question
 string mtrl_chip_close_icon_content_description
+string new_password
 string next
 string notification
 string ok
+string old_password
 string password
 string password_toggle_content_description
 string path_password_eye

@@ -1,6 +1,8 @@
 package com.example.academy_intern.sampledesign.Activities;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -37,6 +39,8 @@ public class BusinessCertificate extends AppCompatActivity {
     private static final String TYPE_1 = "multipart";
     private static final String TYPE_2 = "base64";
     String fileName;
+    ProgressDialog uploadProgress;
+
 
     private UploadService uploadService;
     private Uri uri;
@@ -50,6 +54,7 @@ public class BusinessCertificate extends AppCompatActivity {
         uploadFile = findViewById(R.id.btn_upload);
         btnBack = findViewById(R.id.toolBack);
         tv_attach_file = findViewById(R.id.tv_attach_file);
+        uploadProgress = new ProgressDialog(this);
         btnBack.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -81,6 +86,8 @@ public class BusinessCertificate extends AppCompatActivity {
                 {
                     File file = FileUtils.getFile(getApplicationContext(), uri);
                     //fileName = file.getName();
+                    uploadProgress.setMessage("Uploading...");
+                    uploadProgress.show();
                     uploadMultipart(file);
                 }
                 else
@@ -120,6 +127,7 @@ public class BusinessCertificate extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 BaseResponse baseResponse = (BaseResponse) response.body();
                 if(baseResponse != null) {
+                    uploadProgress.dismiss();
                     Toast.makeText(getApplicationContext(),"You have successfully uploaded", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -159,7 +167,5 @@ public class BusinessCertificate extends AppCompatActivity {
             }
         }
     }
-
-
 
 }
