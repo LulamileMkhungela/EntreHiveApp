@@ -38,7 +38,7 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("/event/acceptEvent")
     Call<EventProfile> acceptEvent(@Field("eventId") String eventId,
-                           @Field("number_of_people") String number_of_people);
+                           @Field("number_of_people") int number_of_people);
 
     @FormUrlEncoded
     @POST("/user/registerUser")
@@ -178,7 +178,6 @@ public interface ApiInterface {
     @GET("/document/getEventDocumentNames")
     Call<ArrayList<String>> getEventDocumentNames(@Query("userId") int userId);
 
-    @FormUrlEncoded
     @GET("/event/getMyEvents")
     Call<ArrayList<EventProfile>> getMyEvents(@Query("userId") int userId);
 

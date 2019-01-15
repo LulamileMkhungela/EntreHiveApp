@@ -2,8 +2,12 @@ package com.example.academy_intern.sampledesign.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 import com.example.academy_intern.sampledesign.R;
 
@@ -12,12 +16,19 @@ import static com.example.academy_intern.sampledesign.Activities.MainActivity.IS
 public class Splash extends Activity {
 
     // Splash screen timer
-    private static int SPLASH_TIME_OUT = 1000;
+    private static int SPLASH_TIME_OUT =5000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
+        ImageView image = findViewById(R.id.iv_logo);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.zoom);
+        image.startAnimation(animation);
 
         new Handler().postDelayed(new Runnable() {
 

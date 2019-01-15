@@ -2,7 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/item1" android:title="Profile" android:icon="@drawable/icon_person"/>
-    <item android:id="@+id/item2" android:title="FAQs"/>
-    <item android:id="@+id/item3" android:title="Logout"/>
+    <item android:id="@+id/item2" android:title="My Events"/>
+    <item android:id="@+id/item3" android:title="FAQs"/>
+    <item android:id="@+id/item4" android:title="Logout"/>
 
 </menu>

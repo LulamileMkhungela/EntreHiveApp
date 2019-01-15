@@ -36,6 +36,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.row_user, parent, false);
         return new UserViewHolder(view);
+
     }
 
     /*The void method, onBindViewHolder, allows for the desired data to be displayed in the view. It

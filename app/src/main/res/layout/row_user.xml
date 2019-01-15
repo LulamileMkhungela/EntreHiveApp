@@ -21,7 +21,8 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingBottom="5dp">
 
             <!-- TextView Event Date -->
             <TextView
@@ -29,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray"
+                android:textStyle="bold"
                 android:drawableLeft="@drawable/calen"/>
 
 
@@ -44,7 +46,9 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/gray"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"/>
+                    android:layout_alignParentEnd="true"
+                    android:textStyle="bold"
+                    android:drawableLeft="@drawable/time"/>
             </RelativeLayout>
 
         </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.academy_intern.sampledesign.Fragment;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -49,6 +50,8 @@ public class TransactionHistory extends Fragment
         view = inflater.inflate(R.layout.transaction_history, container, false);
 
         getTransactionHistory();
+
+
 
         return view;
     }

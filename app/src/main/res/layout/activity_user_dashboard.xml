@@ -18,47 +18,30 @@
         android:paddingTop="8dp"
         android:background="@color/gradientColor">
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="45dp"-->
-            <!--android:layout_alignParentEnd="true"-->
-            <!--android:layout_alignParentRight="true"-->
-            <!--android:layout_marginRight="40dp">-->
-
-            <!--<EditText-->
-                <!--android:id="@+id/et_search"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="search"-->
-                <!--android:textColor="#fff"-->
-                <!--android:textColorHint="#fff" />-->
-            <!--<Button-->
-                <!--android:id="@+id/btnSearch"-->
-                <!--android:layout_width="27dp"-->
-                <!--android:layout_height="27dp"-->
-                <!--android:background="@drawable/search"-->
-                <!--android:textColor="@color/white"-->
-
-                <!--/>-->
-        <!--</LinearLayout>-->
-
-
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:drawableLeft="@drawable/search"
+            android:layout_centerVertical="true"
+            android:textCursorDrawable="@null"
+            android:background="@null"
+            />
 
         <Button
             android:id="@+id/btn_profile"
             android:layout_width="30dp"
             android:layout_marginLeft="10dp"
             android:layout_height="30dp"
-            android:layout_marginRight="40dp"
-            android:background="@drawable/ic_menu_black_24dp" />
-
-        <Button
-            android:id="@+id/btn_notification"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentRight="true"
             android:layout_marginRight="10dp"
-            android:background="@drawable/bells" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_more_vert_black_24dp" />
 
     </RelativeLayout>
 
@@ -86,22 +69,15 @@
         app:menu="@menu/navigation" />
 
 
-    <!--<android.support.design.widget.BottomNavigationView-->
-    <!--android:id="@+id/navigation"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:background="@color/gradientColor"-->
-    <!--app:itemIconTint="@color/white"-->
-    <!--app:itemTextColor="@color/textColor"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:menu="@menu/admin_navigation"/>-->
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#fff"
         app:layout_constraintBottom_toTopOf="@id/navigation"
         app:layout_constraintEnd_toEndOf="@id/navigation"
         android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="13dp">
 
         <android.support.design.widget.FloatingActionButton
@@ -109,6 +85,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
+            android:focusable="true"
+            android:background="#fff"
             android:src="@drawable/add"
             app:backgroundTint="@color/gradientColor" />
     </LinearLayout>

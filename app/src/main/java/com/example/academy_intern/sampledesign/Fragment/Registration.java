@@ -1,6 +1,7 @@
 package com.example.academy_intern.sampledesign.Fragment;
 
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -38,6 +39,7 @@ public class Registration extends Fragment {
     Button btnRegister;
     EditText edtIdentity, edtName, edtEmail, edtPassword, edtConfirmPassword;
     TextView tvLogin;
+    ProgressDialog uploadProgress;
 //    public static boolean IS_USER_LOGGED_IN;
 //    public static int LOGGED_IN_USER_ID;
 
@@ -53,6 +55,7 @@ public class Registration extends Fragment {
         edtPassword = view.findViewById(R.id.et_password);
         edtConfirmPassword = view.findViewById(R.id.et_confirm_pass);
         tvLogin = view.findViewById(R.id.tv_login);
+        uploadProgress = new ProgressDialog(getActivity());
         return view;
     }
 
@@ -146,13 +149,16 @@ public class Registration extends Fragment {
                 if (response.code() == 200)
                 {
                     USER_BALANCE = response.body().getPoints();
+                    uploadProgress.setMessage("please wait...");
+                    uploadProgress.show();
 
                     sessionManager.createLoginSession(response.body().getUserId(), response.body().isUserRole(), response.body().getPoints());
                     IS_USER_LOGGED_IN = sessionManager.isLoggedIn();
                     LOGGED_IN_USER_ID = sessionManager.getLoggedInId();
                     IS_USER_ADMIN = sessionManager.getUserRole();
 
-                    if(IS_USER_ADMIN){
+                    if(IS_USER_ADMIN)
+                    {
 
                         Toast.makeText(getActivity(), successMessage, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getActivity(),AdminDashboard.class);

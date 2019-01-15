@@ -27,6 +27,7 @@ public class FileUtils {
         if (url != null && !url.startsWith("http://") && !url.startsWith("https://")) {
             return true;
         }
+
         return false;
     }
 

@@ -132,8 +132,8 @@ public class InactiveUsers extends android.support.v4.app.Fragment {
         {
             name = "Name: " + mValues.get(position).getName();
             email = "Email Address: " + mValues.get(position).getEmail();
-            dateOfRegistration = "" + StringUtils.substring(mValues.get(position).getDateTime(), 0, 10) ;
-            timeOfRegistration = "Time: " + StringUtils.substring(mValues.get(position).getDateTime(), 11,16);
+            dateOfRegistration = " " + StringUtils.substring(mValues.get(position).getDateTime(), 0, 10) ;
+            timeOfRegistration = " " + StringUtils.substring(mValues.get(position).getDateTime(), 11,16);
 
             holder.tvName.setText(name);
             holder.tvEmail.setText(email);

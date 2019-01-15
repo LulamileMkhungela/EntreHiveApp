@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -25,7 +26,6 @@ import com.example.academy_intern.sampledesign.R;
 import com.example.academy_intern.sampledesign.Services.SessionManager;
 
 import static com.example.academy_intern.sampledesign.Activities.MainActivity.USER_BALANCE;
-import static com.example.academy_intern.sampledesign.Services.PointsWarningDialog.displayWarning;
 
 public class UserDashboard extends AppCompatActivity
 {
@@ -40,6 +40,9 @@ public class UserDashboard extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_dashboard);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         mFab = findViewById(R.id.fab);
         bottomNavigationView = findViewById(R.id.navigation);
@@ -76,11 +79,16 @@ public class UserDashboard extends AppCompatActivity
                                 return true;
 
                             case R.id.item2:
-                                Intent intent = new Intent(getApplicationContext(), ExpandableList.class);
-                                startActivity(intent);
+                                Intent myEvents = new Intent(getApplicationContext(), MyEvents.class);
+                                startActivity(myEvents);
                                 return true;
 
                             case R.id.item3:
+                                Intent faqs = new Intent(getApplicationContext(), ExpandableList.class);
+                                startActivity(faqs);
+                                return true;
+
+                            case R.id.item4:
                                 SessionManager sessionManager = new SessionManager(getApplicationContext());
                                 sessionManager.logoutUser();
                                 Intent logoutIntent = new Intent(getApplicationContext(), HomeActivity.class);

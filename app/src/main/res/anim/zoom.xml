@@ -5,15 +5,13 @@
     android:layout_height="match_parent">
 
     <scale
-        android:duration="1000"
-        android:fromXScale="3.5"
-        android:fromYScale="3.5"
-        android:pivotX="50%p"
+        android:duration="5000"
+        android:fromXScale="1"
+        android:fromYScale="1"
+        android:pivotX="35%p"
         android:pivotY="50%p"
-        android:toYScale="8"
-        android:toXScale="8"
-        android:repeatMode="reverse"
-        android:repeatCount="2">
+        android:toYScale="1.2"
+        android:toXScale="1.2">
     </scale>
 
 </set>

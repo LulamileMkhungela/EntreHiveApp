@@ -1,6 +1,7 @@
 package com.example.academy_intern.sampledesign.Activities;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,9 @@ public class DocumentViewer extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_document_viewer);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         pdfView=(PDFView) findViewById(R.id.pdfView);
         // http://10.1.0.88:8080/downloadFile/1,git_tutorial.pdf

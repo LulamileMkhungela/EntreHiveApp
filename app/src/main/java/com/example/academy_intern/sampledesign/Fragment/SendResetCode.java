@@ -1,6 +1,7 @@
 package com.example.academy_intern.sampledesign.Fragment;
 
 import android.app.Fragment;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -35,6 +36,7 @@ public class SendResetCode extends Fragment {
 
         edtResetCode = view.findViewById(R.id.et_reset_code);
         btnSendResetCode = view.findViewById(R.id.send_reset_code);
+
 
         return view;
     }

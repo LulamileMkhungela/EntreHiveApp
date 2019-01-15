@@ -1211,6 +1211,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable curved_shape
+drawable custom_expandable
 drawable custom_icon_size
 drawable custom_icon_size_time
 drawable date
@@ -1225,6 +1226,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable down_arrow
 drawable download_file
 drawable edit
 drawable edit_text_background
@@ -1242,6 +1244,7 @@ drawable ic_launcher
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_menu_black_24dp
+drawable ic_more_vert_black_24dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1291,6 +1294,7 @@ drawable success
 drawable time
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable up_arrow
 drawable upskill
 drawable usees
 drawable user
@@ -1356,7 +1360,6 @@ id blocking
 id bottom
 id btnCamera
 id btnSave
-id btnSearch
 id btn_accept
 id btn_add_admin
 id btn_attach_file
@@ -1495,6 +1498,7 @@ id italic
 id item1
 id item2
 id item3
+id item4
 id itemLogout
 id item_touch_helper_previous_elevation
 id iv_code
@@ -1526,6 +1530,7 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id my_events
 id name
 id navigation
 id navigation_events
@@ -1568,11 +1573,13 @@ id profile_layout
 id profile_view
 id progress_circular
 id progress_horizontal
+id qrcode
 id radio
 id recycler_view_active_users_list
 id recycler_view_event_history_list
 id recycler_view_inactive_users_list
 id recycler_view_my_event_list
+id recycler_view_my_events_list
 id recycler_view_past_events_list
 id recycler_view_transaction_history_list
 id recycler_view_upcoming_events_list
@@ -1582,6 +1589,7 @@ id right
 id right_icon
 id right_side
 id satellite
+id save
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1677,6 +1685,7 @@ id tv_change_password
 id tv_ck_document
 id tv_company_name
 id tv_company_number
+id tv_create_event
 id tv_date_of_purchase
 id tv_documents
 id tv_email_of_user
@@ -1787,6 +1796,7 @@ layout activity_business_certificate
 layout activity_document_viewer
 layout activity_event__profile
 layout activity_event_history
+layout activity_event_qrcode
 layout activity_home
 layout activity_main
 layout activity_points_warning_dialog
@@ -1834,17 +1844,20 @@ layout design_text_input_password_icon
 layout document_list_view
 layout edit_profile
 layout event_history
+layout event_qr_code_generator
 layout expandable_list_layout
 layout fragment_my_events
 layout home_screen
 layout inactive_users
 layout input_message_dialog
+layout item_qr_code_generator
 layout list_detail
 layout list_group_layout
 layout list_item_layout
 layout login_screen
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
+layout my_events
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1866,7 +1879,6 @@ layout place_autocomplete_fragment
 layout place_autocomplete_item_powered_by_google
 layout place_autocomplete_item_prediction
 layout place_autocomplete_progress
-layout qr_code_generator
 layout register_screen
 layout reset_password
 layout row_event
@@ -1987,6 +1999,7 @@ string firebase_database_url
 string first_name
 string forgot_password
 string gcm_defaultSenderId
+string generate
 string get_started
 string google_api_key
 string google_app_id

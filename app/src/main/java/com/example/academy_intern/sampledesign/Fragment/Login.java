@@ -1,6 +1,7 @@
 package com.example.academy_intern.sampledesign.Fragment;
 
 import android.app.Fragment;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -44,6 +45,8 @@ public class Login extends Fragment {
     View view;
     EditText etPassword,etEmail;
 
+    ProgressDialog uploadProgress;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -53,8 +56,12 @@ public class Login extends Fragment {
         etPassword = view.findViewById(R.id.et_password);
         tvRegister = view.findViewById(R.id.tv_question);
         tvForgetPassword = view.findViewById(R.id.tv_forgot_password);
+
+
+        uploadProgress = new ProgressDialog(getActivity());
         return view;
     }
+
 
     @Override
     public void onActivityCreated( Bundle savedInstanceState) {
@@ -66,6 +73,7 @@ public class Login extends Fragment {
 
                 if(validateEmail()&&validatePass())
                 {
+
                     login();
                 }
             }
@@ -160,6 +168,8 @@ public class Login extends Fragment {
                 if (response.code() == 200)
                 {
                     USER_BALANCE = response.body().getPoints();
+                    uploadProgress.setMessage("please wait...");
+                    uploadProgress.show();
 
                     sessionManager.createLoginSession(response.body().getUserId(), response.body().isUserRole(), response.body().getPoints());
 

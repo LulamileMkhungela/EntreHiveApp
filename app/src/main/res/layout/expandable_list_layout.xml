@@ -43,8 +43,10 @@
         android:id="@+id/ev_expand"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:divider="@color/gradientColor"
+        android:dividerHeight="0.5dp"
+        android:groupIndicator="@drawable/custom_expandable">
 
     </ExpandableListView>
 

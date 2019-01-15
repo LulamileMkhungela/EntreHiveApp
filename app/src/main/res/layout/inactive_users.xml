@@ -4,7 +4,8 @@
     android:id="@+id/event_history"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingBottom="50dp"
+    android:paddingTop="50dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     tools:context=".Fragment.ActiveUsers">
@@ -13,7 +14,6 @@
         android:id="@+id/recycler_view_inactive_users_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="50dp"
-        android:paddingTop="50dp"/>
+        android:paddingBottom="50dp" />
 
 </RelativeLayout>

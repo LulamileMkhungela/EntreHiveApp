@@ -39,6 +39,18 @@ public class EventProfile
     @Expose
     private int attendancePoints;
 
+    @SerializedName("numberOfPeople")
+    @Expose
+    private int numberOfPeople;
+
+    @SerializedName("numberOfPeopleWhoAccepted")
+    @Expose
+    private int numberOfPeopleWhoAccepted;
+
+    @SerializedName("eventRejected")
+    @Expose
+    private boolean eventRejected;
+
     @SerializedName("eventHistoryList")
     @Expose
     private ArrayList<EventProfile> historyOfEvents;
@@ -133,5 +145,33 @@ public class EventProfile
     public void setHistoryOfEvents(ArrayList<EventProfile> historyOfEvents)
     {
         this.historyOfEvents = historyOfEvents;
+    }
+
+    public void setEventDateTime(String eventDateTime) {
+        this.eventDateTime = eventDateTime;
+    }
+
+    public int getNumberOfPeople() {
+        return numberOfPeople;
+    }
+
+    public void setNumberOfPeople(int numberOfPeople) {
+        this.numberOfPeople = numberOfPeople;
+    }
+
+    public int getNumberOfPeopleWhoAccepted() {
+        return numberOfPeopleWhoAccepted;
+    }
+
+    public void setNumberOfPeopleWhoAccepted(int numberOfPeopleWhoAccepted) {
+        this.numberOfPeopleWhoAccepted = numberOfPeopleWhoAccepted;
+    }
+
+    public boolean isEventRejected() {
+        return eventRejected;
+    }
+
+    public void setEventRejected(boolean eventRejected) {
+        this.eventRejected = eventRejected;
     }
 }

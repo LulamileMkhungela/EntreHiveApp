@@ -1,5 +1,6 @@
 package com.example.academy_intern.sampledesign.Activities;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,6 +32,9 @@ public class EventHistory extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_history);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         Call<ArrayList<EventProfile>> call = Api.getClient().getEventHistory(LOGGED_IN_USER_ID);
 

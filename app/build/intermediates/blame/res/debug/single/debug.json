@@ -464,6 +464,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/9070c223cc37ae4e5ad1449bec5ee8f1/res/animator/mtrl_fab_transformation_sheet_collapse_spec.xml"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-ldpi_up_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-ldpi/up_arrow.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_abc_search_view.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/layout/abc_search_view.xml"
     },
@@ -614,6 +618,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxhdpi_success.png.flat",
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable-xxhdpi/success.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxhdpi_up_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xxhdpi/up_arrow.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi_back_arrow.png.flat",
@@ -800,6 +808,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable/abc_text_cursor_material.xml"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_activity_event_qrcode.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/activity_event_qrcode.xml"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_full_open_on_phone.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fc4ad9e401e12358481ac34983bbc6ef/res/drawable-hdpi-v4/common_full_open_on_phone.png"
     },
@@ -862,6 +874,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-hdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi_ic_more_vert_black_24dp.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-hdpi/ic_more_vert_black_24dp.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/color-v23_abc_tint_edittext.xml.flat",
@@ -1084,6 +1100,14 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-xhdpi-v4/abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxhdpi_down_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xxhdpi/down_arrow.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi_up_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-mdpi/up_arrow.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/color-v23_abc_tint_btn_checkable.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/color-v23/abc_tint_btn_checkable.xml"
     },
@@ -1114,6 +1138,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_icon_email.png.flat",
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable/icon_email.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi_down_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xhdpi/down_arrow.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_longpressed_holo.9.png.flat",
@@ -1266,6 +1294,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-hdpi-v4/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi_down_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-mdpi/down_arrow.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_default_mtrl_alpha.9.png.flat",
@@ -1460,6 +1492,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/layout/abc_action_bar_up_container.xml"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_down_arrow.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-anydpi-v21/down_arrow.xml"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_places_ic_search.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/play-services-places-16.0.0.aar/8405441f88df35798e2bbea1c5376c02/res/drawable-hdpi-v4/places_ic_search.png"
     },
@@ -1576,6 +1612,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-mdpi-v4/abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi_ic_more_vert_black_24dp.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-mdpi/ic_more_vert_black_24dp.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-mdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
@@ -1622,6 +1662,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/color_abc_primary_text_material_dark.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/color/abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-ldpi_down_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-ldpi/down_arrow.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_activity_business_certificate.xml.flat",
@@ -1776,10 +1820,6 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-mdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
-        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-v24_time.png.flat",
-        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable-v24/time.png"
-    },
-    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi_attach.png.flat",
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-hdpi/attach.png"
     },
@@ -1856,6 +1896,10 @@
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_my_events.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/my_events.xml"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/9b03c21b6f3980dbb6aef4a16e5e2f0b/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
     },
@@ -1880,12 +1924,12 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_material.xml.flat",
-        "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable/abc_ratingbar_material.xml"
-    },
-    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-xxxhdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_material.xml.flat",
+        "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable/abc_ratingbar_material.xml"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/color_mtrl_tabs_icon_color_selector.xml.flat",
@@ -1938,6 +1982,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_profile_black_24dp.png.flat",
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_profile_black_24dp.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_event_qr_code_generator.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/event_qr_code_generator.xml"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_design_ic_visibility_off.png.flat",
@@ -2002,6 +2050,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-mdpi-v4/abc_text_select_handle_right_mtrl_dark.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_more_vert_black_24dp.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_more_vert_black_24dp.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
@@ -2082,6 +2134,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-xxhdpi-v4/abc_ic_menu_share_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi_ic_more_vert_black_24dp.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_more_vert_black_24dp.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/color_design_error.xml.flat",
@@ -2196,10 +2252,6 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/9070c223cc37ae4e5ad1449bec5ee8f1/res/color/mtrl_btn_text_btn_ripple_color.xml"
     },
     {
-        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_qr_code_generator.xml.flat",
-        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/qr_code_generator.xml"
-    },
-    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_abc_ratingbar_indicator_material.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable/abc_ratingbar_indicator_material.xml"
     },
@@ -2210,6 +2262,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/color_mtrl_chip_background_color.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/9070c223cc37ae4e5ad1449bec5ee8f1/res/color/mtrl_chip_background_color.xml"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi_up_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-hdpi/up_arrow.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_account.png.flat",
@@ -2584,6 +2640,10 @@
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xxxhdpi/bells.png"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-ldpi_ic_more_vert_black_24dp.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-ldpi/ic_more_vert_black_24dp.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4_abc_text_select_handle_left_mtrl_light.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-xxxhdpi-v4/abc_text_select_handle_left_mtrl_light.png"
     },
@@ -2626,6 +2686,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_logout.png.flat",
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable-xxxhdpi/logout.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi_up_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xhdpi/up_arrow.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_admin_tab_active_users.xml.flat",
@@ -2724,6 +2788,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fc4ad9e401e12358481ac34983bbc6ef/res/drawable-hdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_more_vert_black_24dp.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_more_vert_black_24dp.xml"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fc4ad9e401e12358481ac34983bbc6ef/res/drawable-hdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
     },
@@ -2742,6 +2810,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_event_history.png.flat",
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable/event_history.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_more_vert_black_24dp.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_more_vert_black_24dp.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_ic_launcher.png.flat",
@@ -3048,6 +3120,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-hdpi-v4/abc_ic_star_black_16dp.png"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_item_qr_code_generator.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/item_qr_code_generator.xml"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/color-v23_design_tint_password_toggle.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/9070c223cc37ae4e5ad1449bec5ee8f1/res/color-v23/design_tint_password_toggle.xml"
     },
@@ -3076,6 +3152,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/9070c223cc37ae4e5ad1449bec5ee8f1/res/interpolator/mtrl_fast_out_linear_in.xml"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi_down_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-hdpi/down_arrow.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_powered_by_google_dark.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/play-services-places-16.0.0.aar/8405441f88df35798e2bbea1c5376c02/res/drawable-xhdpi-v4/powered_by_google_dark.png"
     },
@@ -3094,6 +3174,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_custom_expandable.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable/custom_expandable.xml"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/color_abc_secondary_text_material_light.xml.flat",
@@ -3172,6 +3256,10 @@
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fc4ad9e401e12358481ac34983bbc6ef/res/drawable-mdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_up_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xxxhdpi/up_arrow.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png"
     },
@@ -3248,6 +3336,10 @@
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/edit_profile.xml"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_time.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable/time.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_btn_check_to_on_mtrl_015.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
@@ -3294,6 +3386,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_abc_vector_test.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable/abc_vector_test.xml"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_up_arrow.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-anydpi-v21/up_arrow.xml"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
@@ -3442,6 +3538,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_down_arrow.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/generated/res/pngs/debug/drawable-xxxhdpi/down_arrow.png"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable_abc_seekbar_track_material.xml.flat",

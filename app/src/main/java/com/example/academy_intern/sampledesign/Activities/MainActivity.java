@@ -2,6 +2,7 @@ package com.example.academy_intern.sampledesign.Activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -34,8 +35,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC);
 
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         HAS_USER_SEEN_SLIDESHOW = sessionManager.firstTimeLaunch();
         USER_BALANCE = sessionManager.getUserBalance();
 
-        /* If user has already registered or logged in, he/she shall be directed to the dashboard.
+        /* If user has already registered or logged in, he/she shall be directed to the user dashboard.
          * If the user is not registered, or has not logged in, he/she shall be directed to the
          * home page, where they can choose whether they'd like to register or log in. If the
          * user's role is that of an admin, then the user shall be directed to the admin dashboard.*/
@@ -61,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         else if (IS_USER_LOGGED_IN && LOGGED_IN_USER_ID != 0)
         {
             storeUserDetailsInString();
-//            storeUserDetailsInHashMap();
             Intent userIntent = new Intent(this, UserDashboard.class);
             startActivity(userIntent);
         }

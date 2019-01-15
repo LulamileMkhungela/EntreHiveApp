@@ -1,5 +1,6 @@
 package com.example.academy_intern.sampledesign.Activities;
 
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -14,6 +15,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         getFragmentManager().beginTransaction().add(R.id.display, new HomeFragment()).commit();
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC);

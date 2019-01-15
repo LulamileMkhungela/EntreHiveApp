@@ -1,6 +1,7 @@
 package com.example.academy_intern.sampledesign.Activities;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -30,6 +31,8 @@ EditText searchBox;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        toolbar.setTitle("Admin Dashboard");
 //        setSupportActionBar(toolbar);

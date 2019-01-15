@@ -180,8 +180,9 @@ public class Scanner extends Fragment implements ZXingScannerView.ResultHandler
 //        goBackToDashboard();
     }
 
-    /*The attendEvent() method checks the database to determine if a user is permitted to attend
-     * a given event.*/
+    /* The attendEvent() method checks the database to determine if a user is permitted to attend
+     * a given event. If the user is permitted to attend, the user receives points for the
+     * attendance. */
     private void attendEvent()
     {
         final int eventId = event.getEventId();

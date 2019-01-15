@@ -1,6 +1,7 @@
 package com.example.academy_intern.sampledesign.Activities;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +38,9 @@ public class SubscribeToAnEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subscribe_to_an_event);
 
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+
         Intent intent_o = getIntent();
         event_id = Integer.parseInt(intent_o.getStringExtra("event_id"));
         event_date_time = intent_o.getStringExtra("event_date_time");
@@ -61,6 +65,13 @@ public class SubscribeToAnEvent extends AppCompatActivity {
         IS_USER_LOGGED_IN = sessionManager.isLoggedIn();
         IS_USER_ADMIN = sessionManager.getUserRole();
 
+        btn_reject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SubscribeToAnEvent.super.onBackPressed();
+            }
+        });
+
         btn_subscribe.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -74,7 +85,7 @@ public class SubscribeToAnEvent extends AppCompatActivity {
                     @Override
                     public void onResponse(Call <Void> call, Response<Void> response)
                     {
-                        Toast.makeText(getApplicationContext(),"request was made successfully ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"You have been subscribed to the event.", Toast.LENGTH_LONG).show();
 
                         if(IS_USER_LOGGED_IN){
 

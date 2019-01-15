@@ -1,5 +1,6 @@
 package com.example.academy_intern.sampledesign.Activities;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -53,6 +54,9 @@ public class UserDocuments extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_documents);
+
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
 
         simpleList = (findViewById(R.id.simpleListView));
         btnBack = findViewById(R.id.btn_back);

@@ -1,6 +1,7 @@
 package com.example.academy_intern.sampledesign.Fragment;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -31,6 +32,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.academy_intern.sampledesign.Activities.MainActivity.IS_USER_ADMIN;
+
 public class UpcomingEvents extends android.support.v4.app.Fragment
 {
     public ArrayList<EventProfile> upcomingEvents = new ArrayList <>();
@@ -52,6 +55,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
         View view = inflater.inflate(R.layout.upcoming_events, container, false);
 
         getUpcomingEvents();
+
 
         recyclerView = view.findViewById(R.id.recycler_view_upcoming_events_list);
 
@@ -156,6 +160,12 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
                 tvEventId = view.findViewById(R.id.tv_event_id);
                 cardView = view.findViewById(R.id.cardview);
 
+
+                if (IS_USER_ADMIN)
+                {
+                    cardView.setEnabled(false);
+                }
+
                 cardView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -168,6 +178,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
                         v.getContext().startActivity(eventDetailsIntent);
                     }
                 });
+
             }
             @Override
             public String toString() {
