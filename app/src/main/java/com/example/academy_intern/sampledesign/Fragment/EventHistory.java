@@ -57,7 +57,7 @@ public class EventHistory extends Fragment
             @Override
             public void onFailure(Call<ArrayList<EventProfile>> call, Throwable t)
             {
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

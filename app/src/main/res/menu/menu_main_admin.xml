@@ -5,6 +5,9 @@
         android:title="Add Admin"
         android:icon="@drawable/icon_person"/>
 
+    <item android:id="@+id/leaderboard"
+        android:title="Leaderboard"/>
+
     <item android:id="@+id/logout"
         android:title="Logout"/>
 

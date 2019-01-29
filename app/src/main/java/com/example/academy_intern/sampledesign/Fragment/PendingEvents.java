@@ -34,6 +34,7 @@ public class PendingEvents extends android.support.v4.app.Fragment
 {
     public ArrayList<EventProfile> pendingEvents = new ArrayList <>();
     public ArrayList<EventProfile> filteredList = new ArrayList <>();
+    public static int NUMBER_OF_PENDING_EVENTS;
     // RecycleView adapter object
     public EventRecyclerViewAdapter mAdapter;
     // Search edit box
@@ -87,6 +88,7 @@ public class PendingEvents extends android.support.v4.app.Fragment
             public void onResponse(Call<ArrayList<EventProfile>> call, Response<ArrayList<EventProfile>> response)
             {
                 pendingEvents = response.body();
+                NUMBER_OF_PENDING_EVENTS = pendingEvents.size();
                 filteredList.addAll(pendingEvents);
                 generatePendingEventsList();
             }
@@ -188,7 +190,6 @@ public class PendingEvents extends android.support.v4.app.Fragment
                         String Title = org.apache.commons.lang3.StringUtils.substringAfter(tvTitle.getText().toString(), "");
                         String Time = org.apache.commons.lang3.StringUtils.substringAfter(tvTime.getText().toString(), "Time: ");
                         String userId = tvUserId.getText().toString();
-
 
                         Intent profileIntent = new Intent(v.getContext(), EventProfileForAdmin.class);
 

@@ -8,7 +8,7 @@
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
     android:paddingRight="16dp"
-    tools:context="com.example.academy_intern.sampledesign.Fragment.Admin_Points">
+    tools:context=".Fragment.Admin_Points">
 
 
     <LinearLayout
@@ -25,38 +25,64 @@
             android:layout_marginRight="7dp"
             android:text="Balance:"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone"/>
         <TextView
 
-            android:id="@+id/txtBalance"
+            android:id="@+id/txtHeading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
-            android:text="5000"
+            android:layout_marginRight="30dp"
+            android:text="Points Allocation"
+            android:gravity="center"
+            android:textStyle="bold"
             android:textAppearance="?android:attr/textAppearanceLarge"
             />
-
-
     </LinearLayout>
-
 
 
     <LinearLayout
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:orientation="vertical"
         >
 
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Email Address"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="307dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:backgroundTint="@color/colorNavIcon"
+            android:inputType="text"
+            app:layout_constraintTop_toBottomOf="@id/textView3" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Cash in Points"
+            android:text="Points"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textStyle="bold" />
 
@@ -70,14 +96,14 @@
             app:layout_constraintTop_toBottomOf="@id/textView3" />
 
         <Button
-            android:id="@+id/btnSave"
+            android:id="@+id/btnPay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/txtPointInRands"
             android:layout_margin="11dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/button_design"
-            android:text="Save"
+            android:text="Pay"
 
             android:textAllCaps="false"
             android:textColor="@color/textColor"

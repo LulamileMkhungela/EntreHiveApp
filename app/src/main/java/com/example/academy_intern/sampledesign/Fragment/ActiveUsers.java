@@ -36,6 +36,7 @@ public class ActiveUsers extends android.support.v4.app.Fragment {
     // List of all dictionary words
     public ArrayList<UserProfile> activeUsers = new ArrayList <>();
     public ArrayList<UserProfile> filteredList = new ArrayList <>();
+    public static int NUMBER_OF_ACTIVE_USERS;
     // RecycleView adapter object
     public UserRecyclerViewAdapter mAdapter;
     // Search edit box
@@ -89,6 +90,7 @@ public class ActiveUsers extends android.support.v4.app.Fragment {
             public void onResponse(Call<ArrayList<UserProfile>> call, Response<ArrayList<UserProfile>> response)
             {
                 activeUsers = response.body();
+                NUMBER_OF_ACTIVE_USERS = activeUsers.size();
                 filteredList.addAll(activeUsers);
                 generateActiveUsersList();
             }

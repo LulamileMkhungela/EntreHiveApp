@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.academy_intern.sampledesign.Adapter.TabAdapter;
 import com.example.academy_intern.sampledesign.Fragment.EventHistory;
-import com.example.academy_intern.sampledesign.Fragment.TransactionHistory;
 import com.example.academy_intern.sampledesign.Fragment.UpcomingEvents;
 import com.example.academy_intern.sampledesign.R;
 

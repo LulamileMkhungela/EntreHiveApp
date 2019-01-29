@@ -12,10 +12,12 @@ import android.widget.Toast;
 
 import com.example.academy_intern.sampledesign.Model.UserProfile;
 import com.example.academy_intern.sampledesign.R;
+import com.example.academy_intern.sampledesign.Services.SessionManager;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import static com.example.academy_intern.sampledesign.Activities.MainActivity.LOGGED_IN_USER_DETAILS;
+import static com.example.academy_intern.sampledesign.Activities.MainActivity.USER_BALANCE;
 
 public class Profile extends AppCompatActivity {
 
@@ -30,7 +32,6 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
 
         initialiseWidgets();
 
@@ -80,6 +81,10 @@ public class Profile extends AppCompatActivity {
         {
             Picasso.get().load(com.example.academy_intern.sampledesign.Activities.EditProfile.LOCAL_PHOTO_PATH).resize(50,50).centerCrop().into(imageView);
         }
+
+        SessionManager sessionManager = new SessionManager(this);
+        USER_BALANCE = Integer.valueOf(currentPoints);
+        sessionManager.setUserBalance(USER_BALANCE);
     }
 
     private void initialiseWidgets()

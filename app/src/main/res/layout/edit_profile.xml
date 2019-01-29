@@ -32,7 +32,8 @@
                 android:layout_centerVertical="true"
                 android:text=" Edit Profile"
                 android:textColor="@color/white"
-                android:textAppearance="?android:attr/textAppearanceLarge" android:textStyle="bold"/>
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textStyle="bold"/>
 
 
             <Button
@@ -282,6 +283,7 @@
                                 android:text=""
                                 android:textColor="@color/gray"
                                 android:textSize="12sp"
+                                android:textStyle="bold"
                                 />
                         </LinearLayout>
 

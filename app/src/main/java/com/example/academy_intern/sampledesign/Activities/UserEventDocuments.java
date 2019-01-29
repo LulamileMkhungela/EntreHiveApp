@@ -126,9 +126,9 @@ public class UserEventDocuments extends AppCompatActivity {
     {
 
         Intent intent = getIntent();
-        int userId = intent.getIntExtra("User Id",0);
+        int eventId = Integer.valueOf(intent.getStringExtra("EventId"));
 
-        Call<ArrayList<String>> call = Api.getClient().getEventDocumentNames(userId);
+        Call<ArrayList<String>> call = Api.getClient().getEventDocumentNames(eventId);
 
         Log.wtf("URL Called", call.request().url() + "");
 
@@ -156,9 +156,9 @@ public class UserEventDocuments extends AppCompatActivity {
     {
 
         Intent intent = getIntent();
-        int userId = intent.getIntExtra("User Id",0);
+        int eventId = Integer.valueOf(intent.getStringExtra("EventId"));
 
-        Call<ArrayList<String>> call = Api.getClient().getEventDownloadLinks(userId);
+        Call<ArrayList<String>> call = Api.getClient().getEventDownloadLinks(eventId);
 
         Log.wtf("URL Called", call.request().url() + "");
 
@@ -226,10 +226,7 @@ public class UserEventDocuments extends AppCompatActivity {
 
                 NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                 notificationManager.notify(455, mBuilder.build());
-
-
             }
-
         }
     };
 

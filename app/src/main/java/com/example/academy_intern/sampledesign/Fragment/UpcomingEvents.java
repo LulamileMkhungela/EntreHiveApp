@@ -38,6 +38,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
 {
     public ArrayList<EventProfile> upcomingEvents = new ArrayList <>();
     public ArrayList<EventProfile> filteredList = new ArrayList <>();
+    public static int NUMBER_OF_UPCOMING_EVENTS;
     // RecycleView adapter object
     public EventRecyclerViewAdapter mAdapter;
     // Search edit box
@@ -55,7 +56,6 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
         View view = inflater.inflate(R.layout.upcoming_events, container, false);
 
         getUpcomingEvents();
-
 
         recyclerView = view.findViewById(R.id.recycler_view_upcoming_events_list);
 
@@ -75,6 +75,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
             public void onResponse(Call<ArrayList<EventProfile>> call, Response<ArrayList<EventProfile>> response)
             {
                 upcomingEvents = response.body();
+                NUMBER_OF_UPCOMING_EVENTS = upcomingEvents.size();
                 filteredList.addAll(upcomingEvents);
                 generateUpcomingEventsList();
             }
@@ -82,7 +83,8 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
             @Override
             public void onFailure(Call<ArrayList<EventProfile>> call, Throwable t)
             {
-                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(), t.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.d("response", t.getStackTrace().toString());
             }
         });
     }
@@ -102,7 +104,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
     public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecyclerViewAdapter.ViewHolder> implements Filterable {
         private ArrayList<EventProfile> mValues;
         private EventRecyclerViewAdapter.CustomFilter mFilter;
-        private String title, event_description, date, time, event_location, event_id, event_date_time;
+        private String title, event_description, date, time, event_location, event_id, event_date_time, attendance_points;
 
         public EventRecyclerViewAdapter(ArrayList<EventProfile> items) {
             mValues = items;
@@ -125,6 +127,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
             time = " " + StringUtils.substring(upcomingEvents.get(position).getEventDateTime(), 11,16);
             event_location = "Location: " + upcomingEvents.get(position).getEventLocation();
             event_id = String.valueOf(upcomingEvents.get(position).getEventId());
+            attendance_points = String.valueOf(upcomingEvents.get(position).getAttendancePoints());
 
             holder.tvTitle.setText(title);
             holder.tvDescription.setText(event_description);
@@ -132,6 +135,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
             holder.tvTime.setText(time);
             holder.tvLocation.setText(event_location);
             holder.tvEventId.setText(event_id);
+            holder.tvAttendancePoints.setText(attendance_points);
         }
 
         @Override
@@ -146,7 +150,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
 
         public class ViewHolder extends RecyclerView.ViewHolder {
 
-            TextView tvTitle, tvDescription, tvDate, tvTime, tvLocation, tvEventId;
+            TextView tvTitle, tvDescription, tvDate, tvTime, tvLocation, tvEventId, tvAttendancePoints;
 
             CardView cardView;
 
@@ -158,6 +162,7 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
                 tvTime = view.findViewById(R.id.tv_event_time);
                 tvLocation = view.findViewById(R.id.tv_event_location);
                 tvEventId = view.findViewById(R.id.tv_event_id);
+                tvAttendancePoints = view.findViewById(R.id.tv_attendance_points);
                 cardView = view.findViewById(R.id.cardview);
 
 
@@ -169,12 +174,22 @@ public class UpcomingEvents extends android.support.v4.app.Fragment
                 cardView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
+                        String EventId = tvEventId.getText().toString();
+                        String Description = org.apache.commons.lang3.StringUtils.substringAfter(tvDescription.getText().toString(), "Description: ");
+                        String Date = org.apache.commons.lang3.StringUtils.substringAfter(tvDate.getText().toString(), "");
+                        String Location = org.apache.commons.lang3.StringUtils.substringAfter(tvLocation.getText().toString(), "Location: ");
+                        String Title = org.apache.commons.lang3.StringUtils.substringAfter(tvTitle.getText().toString(), "");
+                        String Time = org.apache.commons.lang3.StringUtils.substringAfter(tvTime.getText().toString(), "Time: ");
+                        String AttendancePoints = tvAttendancePoints.getText().toString();
+
                         Intent eventDetailsIntent = new Intent(v.getContext(), SubscribeToAnEvent.class);
-                        eventDetailsIntent.putExtra("event_id", event_id);
-                        eventDetailsIntent.putExtra("event_date_time", event_date_time);
-                        eventDetailsIntent.putExtra("event_location", event_location);
-                        eventDetailsIntent.putExtra("title", title);
-                        eventDetailsIntent.putExtra("event_description", event_description);
+                        eventDetailsIntent.putExtra("event_id", EventId);
+                        eventDetailsIntent.putExtra("event_date_time", Date + Time);
+                        eventDetailsIntent.putExtra("event_location", Location);
+                        eventDetailsIntent.putExtra("title", Title);
+                        eventDetailsIntent.putExtra("event_description", Description);
+                        eventDetailsIntent.putExtra("attendance_points", AttendancePoints);
                         v.getContext().startActivity(eventDetailsIntent);
                     }
                 });

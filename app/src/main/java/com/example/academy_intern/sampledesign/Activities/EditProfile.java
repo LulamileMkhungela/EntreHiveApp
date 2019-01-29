@@ -162,7 +162,7 @@ public class EditProfile extends AppCompatActivity {
 
                 if(baseResponse != null)
                 {
-                    Toast.makeText(getApplicationContext(), baseResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getApplicationContext(), baseResponse.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
 //                progressDialog.dismiss();

@@ -1226,6 +1226,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable dollars
 drawable down_arrow
 drawable download_file
 drawable edit
@@ -1359,7 +1360,7 @@ id beginning
 id blocking
 id bottom
 id btnCamera
-id btnSave
+id btnPay
 id btn_accept
 id btn_add_admin
 id btn_attach_file
@@ -1509,6 +1510,7 @@ id largeLabel
 id last_row
 id layout
 id layoutDots
+id leaderboard
 id left
 id light
 id line1
@@ -1556,6 +1558,7 @@ id pendingEvents
 id pendingEventsId
 id percent
 id personal_details
+id pic
 id pin
 id place_autocomplete_clear_button
 id place_autocomplete_powered_by_google
@@ -1680,6 +1683,8 @@ id transition_transform
 id tv
 id tv_add_items
 id tv_attach_file
+id tv_attendance_points
+id tv_balance
 id tv_business_profile
 id tv_change_password
 id tv_ck_document
@@ -1688,6 +1693,7 @@ id tv_company_number
 id tv_create_event
 id tv_date_of_purchase
 id tv_documents
+id tv_email
 id tv_email_of_user
 id tv_event_date
 id tv_event_description
@@ -1701,6 +1707,7 @@ id tv_item_price
 id tv_list
 id tv_login
 id tv_name_of_user
+id tv_points
 id tv_purchase
 id tv_question
 id tv_registration_date
@@ -1711,9 +1718,11 @@ id tv_send_email
 id tv_sign_in
 id tv_sign_up
 id tv_time_of_purchase
+id tv_user
 id tv_user_id
 id tv_warning
-id txtBalance
+id txtEmail
+id txtHeading
 id txtPointInRands
 id txt_attach_file
 id txt_attendance_points
@@ -1721,6 +1730,7 @@ id txt_date_time
 id txt_description
 id txt_location
 id txt_number_of_people
+id txt_points
 id txt_title
 id txt_welcome
 id uniform
@@ -1804,6 +1814,7 @@ layout activity_profile
 layout activity_progress
 layout activity_scanner_view
 layout activity_subscribe_to_an_event
+layout activity_top_users
 layout activity_user_adminprofile
 layout activity_user_dashboard
 layout activity_user_details
@@ -1892,6 +1903,7 @@ layout send_email
 layout send_reset_code
 layout splash_screen
 layout support_simple_spinner_dropdown_item
+layout top_users
 layout transaction_history
 layout upcoming_events
 layout user_events
@@ -2069,6 +2081,7 @@ string title_profile
 string transaction_history
 string upload
 string upload_btn
+string your_awesome_title
 style ActionBarPopupThemeOverlay
 style ActionBarThemeOverlay
 style AlertDialog_AppCompat

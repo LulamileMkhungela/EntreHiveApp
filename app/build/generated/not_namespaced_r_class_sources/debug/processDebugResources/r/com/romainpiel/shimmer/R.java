@@ -17,9 +17,9 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int ic_launcher = 0x7f0800aa;
-        public static final int mask = 0x7f0800bd;
-        public static final int spot_mask = 0x7f0800db;
+        public static final int ic_launcher = 0x7f0800ab;
+        public static final int mask = 0x7f0800be;
+        public static final int spot_mask = 0x7f0800dc;
     }
     public static final class styleable {
         private styleable() {}

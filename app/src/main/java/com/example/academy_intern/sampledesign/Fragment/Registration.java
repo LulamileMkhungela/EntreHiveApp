@@ -1,10 +1,13 @@
 package com.example.academy_intern.sampledesign.Fragment;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -144,9 +147,9 @@ public class Registration extends Fragment {
             @Override
             public void onResponse(Call <UserProfile> call, Response <UserProfile> response) {
                 String successMessage = response.body().getName() + ", you have been registered!";
-                String failMessage = "You are already registered!";
+                String failMessage = "You already have an account!";
 
-                if (response.code() == 200)
+                if (response.body().getName() != null)
                 {
                     USER_BALANCE = response.body().getPoints();
                     uploadProgress.setMessage("please wait...");
@@ -160,7 +163,6 @@ public class Registration extends Fragment {
                     if(IS_USER_ADMIN)
                     {
 
-                        Toast.makeText(getActivity(), successMessage, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getActivity(),AdminDashboard.class);
                         startActivity(intent);
 
@@ -168,17 +170,15 @@ public class Registration extends Fragment {
                     else
                     {
                         storeUserDetailsInString();
-//                        storeUserDetailsInHashMap();
-                        Toast.makeText(getActivity(), successMessage, Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(getActivity(),UserDashboard.class);
                         startActivity(intent);
                     }
 
-                } else
-
+                }
+                else
                 {
+//                    registrationDialog(getActivity(), "Unsuccessful Registration", failMessage);
                     Toast.makeText(getActivity(), failMessage, Toast.LENGTH_LONG).show();
-                    getFragmentManager().beginTransaction().replace(R.id.display, new Login()).commit();
                 }
             }
 
@@ -188,5 +188,22 @@ public class Registration extends Fragment {
             }
         });
 
+    }
+
+    private void registrationDialog(Activity activity, String title, String message)
+    {
+        final AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        getFragmentManager().beginTransaction().replace(R.id.display, new Login()).commit();
+                    }
+                });
+
+        alertDialog.setIcon(R.drawable.funds);
+        alertDialog.show();
     }
 }

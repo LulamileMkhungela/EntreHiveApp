@@ -1412,12 +1412,20 @@
         "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/document_list_view.xml"
     },
     {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi_dollars.png.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/drawable-hdpi/dollars.png"
+    },
+    {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_abc_alert_dialog_title_material.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/d1d4d27abb8cae2e9bfa865441c05499/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/fc4ad9e401e12358481ac34983bbc6ef/res/drawable-hdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_top_users.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/top_users.xml"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/drawable-xhdpi_camera.png.flat",
@@ -1586,6 +1594,10 @@
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_design_bottom_sheet_dialog.xml.flat",
         "source": "/Users/academy_intern/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/9070c223cc37ae4e5ad1449bec5ee8f1/res/layout/design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/layout_activity_top_users.xml.flat",
+        "source": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/src/main/res/layout/activity_top_users.xml"
     },
     {
         "merged": "/Users/academy_intern/Documents/entrehiveandroid-master 2/app/build/intermediates/res/merged/debug/animator_mtrl_btn_state_list_anim.xml.flat",

@@ -1,7 +1,10 @@
 package com.example.academy_intern.sampledesign.Activities;
 
+import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,6 +22,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.example.academy_intern.sampledesign.Activities.MainActivity.IS_USER_ADMIN;
+import static com.example.academy_intern.sampledesign.Activities.MainActivity.USER_BALANCE;
+import static com.example.academy_intern.sampledesign.Activities.MainActivity.storeUserDetailsInString;
 
 public class SubscribeToAnEvent extends AppCompatActivity {
 
@@ -30,8 +35,9 @@ public class SubscribeToAnEvent extends AppCompatActivity {
     String event_description = "nothing";
     String event_location = "nothing";
     String title = "nothing";
+    String attendance_points = "nothing";
 
-    TextView txt_date_time,txt_location,txt_title,txt_description;
+    TextView txt_date_time,txt_location,txt_title,txt_description, txt_attendance_points;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +53,17 @@ public class SubscribeToAnEvent extends AppCompatActivity {
         event_description = intent_o.getStringExtra("event_description");
         event_location = intent_o.getStringExtra("event_location");
         title = intent_o.getStringExtra("title");
+        attendance_points = intent_o.getStringExtra("attendance_points");
+        if (attendance_points == null || attendance_points.equals("0"))
+        {
+            attendance_points = "Unknown number of";
+        }
 
         txt_location = findViewById(R.id.txt_location);
         txt_date_time = findViewById(R.id.txt_date_time);
         txt_description = findViewById(R.id.txt_description);
         txt_title = findViewById(R.id.txt_title);
+        txt_attendance_points = findViewById(R.id.txt_points);
         btn_subscribe =  findViewById(R.id.btn_subscribe);
         btn_reject = findViewById(R.id.btn_reject);
 
@@ -59,6 +71,7 @@ public class SubscribeToAnEvent extends AppCompatActivity {
         txt_location.setText(event_location);
         txt_description.setText(event_description);
         txt_title.setText(title);
+        txt_attendance_points.setText(attendance_points + " points to be awarded");
 
         SessionManager sessionManager = new SessionManager(this);
         LOGGED_IN_USER_ID = sessionManager.getLoggedInId();
@@ -68,7 +81,35 @@ public class SubscribeToAnEvent extends AppCompatActivity {
         btn_reject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SubscribeToAnEvent.super.onBackPressed();
+                final SessionManager sessionManager = new SessionManager(getApplicationContext());
+                //Receives getClient instance from the Api
+                Call<String> call = Api.getClient().cancelAttendance(LOGGED_IN_USER_ID, event_id);
+
+                call.enqueue(new Callback<String>()
+                {
+                    @Override
+                    public void onResponse(Call <String> call, Response<String> response)
+                    {
+                        String message = response.body();
+                        if (message != null)
+                        {
+                            storeUserDetailsInString();
+                            cancellationDialog(SubscribeToAnEvent.this, message);
+                        }
+                        else
+                        {
+                            SubscribeToAnEvent.super.onBackPressed();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call <String> call, Throwable t)
+                    {
+                        Log.d("response", t.getStackTrace().toString());
+                    }
+                });
+
             }
         });
 
@@ -77,18 +118,43 @@ public class SubscribeToAnEvent extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
+                final SessionManager sessionManager = new SessionManager(getApplicationContext());
                 //Receives getClient instance from the Api
-                Call<Void> call = Api.getClient().subscribeToEvent(LOGGED_IN_USER_ID, event_id);
+                Call<String> call = Api.getClient().subscribeToEvent(LOGGED_IN_USER_ID, event_id);
 
-                call.enqueue(new Callback<Void>()
+                call.enqueue(new Callback<String>()
                 {
                     @Override
-                    public void onResponse(Call <Void> call, Response<Void> response)
+                    public void onResponse(Call <String> call, Response<String> response)
                     {
-                        Toast.makeText(getApplicationContext(),"You have been subscribed to the event.", Toast.LENGTH_LONG).show();
+                        String message = response.body();
+                        storeUserDetailsInString();
+                        subscriptionDialog(SubscribeToAnEvent.this, message);
+                    }
 
-                        if(IS_USER_LOGGED_IN){
+                    @Override
+                    public void onFailure(Call <String> call, Throwable t)
+                    {
+                        Log.d("response", t.getStackTrace().toString());
+                    }
+                });
 
+            }
+        });
+    }
+
+    private void subscriptionDialog(Activity activity, String message)
+    {
+        final AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+        alertDialog.setTitle("Subscription Status");
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+
+                        if(IS_USER_LOGGED_IN)
+                        {
                             Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
                             startActivity(intent);
 
@@ -105,18 +171,45 @@ public class SubscribeToAnEvent extends AppCompatActivity {
                             startActivity(intent);
                         }
                     }
+                });
 
-                    @Override
-                    public void onFailure(Call <Void> call, Throwable t)
+//        alertDialog.setIcon(R.drawable.success);
+        alertDialog.show();
+
+    }
+
+    private void cancellationDialog(Activity activity, String message)
+    {
+        final AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+        alertDialog.setTitle("Cancellation");
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which)
                     {
-                        Log.d("response", t.getStackTrace().toString());
+
+                        if(IS_USER_LOGGED_IN)
+                        {
+                            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                            startActivity(intent);
+
+                        }
+
+                        if(IS_USER_ADMIN)
+                        {
+                            Intent intent = new Intent(getApplicationContext(), AdminDashboard.class);
+                            startActivity(intent);
+
+                        } else {
+
+                            Intent intent = new Intent(getApplicationContext(), UserDashboard.class);
+                            startActivity(intent);
+                        }
                     }
                 });
 
-            }
-        });
-
-
+//        alertDialog.setIcon(R.drawable.success);
+        alertDialog.show();
 
     }
 

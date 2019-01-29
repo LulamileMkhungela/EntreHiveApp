@@ -17,6 +17,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.PopupMenu;
 
@@ -42,6 +43,8 @@ public class UserDashboard extends AppCompatActivity
         setContentView(R.layout.activity_user_dashboard);
 
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 
         mFab = findViewById(R.id.fab);
@@ -185,7 +188,6 @@ public class UserDashboard extends AppCompatActivity
 
         alertDialog.setIcon(R.drawable.funds);
         alertDialog.show();
-
     }
 
 }

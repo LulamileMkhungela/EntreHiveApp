@@ -3,6 +3,7 @@ package com.example.academy_intern.sampledesign.Activities;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,6 +41,7 @@ public class MyEvents extends AppCompatActivity {
     public EventRecyclerViewAdapter mAdapter;
     RecyclerView recyclerView;
     Button btnBack;
+    FloatingActionButton mFab;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,13 +54,22 @@ public class MyEvents extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view_my_events_list);
         btnBack = findViewById(R.id.toolB);
+        mFab = findViewById(R.id.fab);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent dashIntent = new Intent(getApplicationContext(), UserDashboard.class);
+                Intent dashIntent = new Intent(MyEvents.this, UserDashboard.class);
                 startActivity(dashIntent);
+            }
+        });
+
+        mFab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent eventIntent = new Intent(MyEvents.this, AddEvent.class);
+                startActivity(eventIntent);
             }
         });
 
@@ -82,7 +93,7 @@ public class MyEvents extends AppCompatActivity {
             @Override
             public void onFailure(Call<ArrayList<EventProfile>> call, Throwable t)
             {
-                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -102,7 +113,7 @@ public class MyEvents extends AppCompatActivity {
     public class EventRecyclerViewAdapter extends RecyclerView.Adapter<EventRecyclerViewAdapter.ViewHolder> implements Filterable {
         private ArrayList<EventProfile> mValues;
         private EventRecyclerViewAdapter.CustomFilter mFilter;
-        private String title, event_description, date, time, event_location, event_id, event_date_time;
+        private String title, event_description, date, time, event_location, event_id, event_date_time, attendance_points;
 
         public EventRecyclerViewAdapter(ArrayList<EventProfile> items) {
             mValues = items;
@@ -125,6 +136,7 @@ public class MyEvents extends AppCompatActivity {
             time = " " + StringUtils.substring(myEvents.get(position).getEventDateTime(), 11,16);
             event_location = "Location: " + myEvents.get(position).getEventLocation();
             event_id = String.valueOf(myEvents.get(position).getEventId());
+            attendance_points = String.valueOf(myEvents.get(position).getAttendancePoints());
 
 
             holder.tvTitle.setText(title);
@@ -133,6 +145,7 @@ public class MyEvents extends AppCompatActivity {
             holder.tvTime.setText(time);
             holder.tvLocation.setText(event_location);
             holder.tvEventId.setText(event_id);
+            holder.tvAttendancePoints.setText(attendance_points);
         }
 
         @Override
@@ -147,7 +160,7 @@ public class MyEvents extends AppCompatActivity {
 
         public class ViewHolder extends RecyclerView.ViewHolder {
 
-            TextView tvTitle, tvDescription, tvDate, tvTime, tvLocation, tvEventId;
+            TextView tvTitle, tvDescription, tvDate, tvTime, tvLocation, tvEventId, tvAttendancePoints;
 
             CardView cardView;
 
@@ -159,6 +172,7 @@ public class MyEvents extends AppCompatActivity {
                 tvTime = view.findViewById(R.id.tv_event_time);
                 tvLocation = view.findViewById(R.id.tv_event_location);
                 tvEventId = view.findViewById(R.id.tv_event_id);
+                tvAttendancePoints = view.findViewById(R.id.tv_attendance_points);
                 cardView = view.findViewById(R.id.cardview);
 
 
@@ -169,6 +183,7 @@ public class MyEvents extends AppCompatActivity {
 
                         qrIntent.putExtra("event_id", event_id);
                         qrIntent.putExtra("title", title);
+                        qrIntent.putExtra("attendance_points", attendance_points);
 
                         v.getContext().startActivity(qrIntent);
                     }

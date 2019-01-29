@@ -180,12 +180,12 @@ public class UserProfileForAdmin extends AppCompatActivity
                     if (response.body().getName() != null)
                     {
                         activateProgress.dismiss();
-                        Toast.makeText(getApplicationContext(), "User's account has been activated.", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(getApplicationContext(), "User's account has been activated.", Toast.LENGTH_SHORT).show();
                     }
                     else
                     {
                         activateProgress.dismiss();
-                        Toast.makeText(getApplicationContext(), "For some unknown reason, the user's account has not been activated.", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(getApplicationContext(), "For some unknown reason, the user's account has not been activated.", Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -194,7 +194,7 @@ public class UserProfileForAdmin extends AppCompatActivity
                     // close it after response
                     Log.v("this", "No Response!");
                     activateProgress.dismiss();
-                    Toast.makeText(getApplicationContext(), "Unable to reach the server. Please try again later.", Toast.LENGTH_SHORT).show();
+                 //   Toast.makeText(getApplicationContext(), "Unable to reach the server. Please try again later.", Toast.LENGTH_SHORT).show();
                 }
             });
 

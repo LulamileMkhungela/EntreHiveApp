@@ -51,17 +51,8 @@ public class EventProfile
     @Expose
     private boolean eventRejected;
 
-    @SerializedName("eventHistoryList")
-    @Expose
-    private ArrayList<EventProfile> historyOfEvents;
-
     public EventProfile() {
 
-    }
-
-    public EventProfile(ArrayList <EventProfile> historyOfEvents)
-    {
-        this.historyOfEvents = historyOfEvents;
     }
 
     public EventProfile(String eventTitle, String eventDateTime, String eventDescription) {
@@ -77,6 +68,22 @@ public class EventProfile
         this.eventDateTime = eventDateTime;
         this.eventLocation = eventLocation;
         this.activeEvent = false;
+    }
+
+    public EventProfile(int eventId, boolean activeEvent, String eventTitle, String eventDateTime, String eventDescription,
+                        String eventLocation, int userId, int attendancePoints, int numberOfPeople,
+                        int numberOfPeopleWhoAccepted, boolean eventRejected) {
+        this.eventId = eventId;
+        this.activeEvent = activeEvent;
+        this.eventTitle = eventTitle;
+        this.eventDateTime = eventDateTime;
+        this.eventDescription = eventDescription;
+        this.eventLocation = eventLocation;
+        this.userId = userId;
+        this.attendancePoints = attendancePoints;
+        this.numberOfPeople = numberOfPeople;
+        this.numberOfPeopleWhoAccepted = numberOfPeopleWhoAccepted;
+        this.eventRejected = eventRejected;
     }
 
     public boolean isActiveEvent() {
@@ -135,16 +142,6 @@ public class EventProfile
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public ArrayList<EventProfile> getHistoryOfEvents()
-    {
-        return historyOfEvents;
-    }
-
-    public void setHistoryOfEvents(ArrayList<EventProfile> historyOfEvents)
-    {
-        this.historyOfEvents = historyOfEvents;
     }
 
     public void setEventDateTime(String eventDateTime) {

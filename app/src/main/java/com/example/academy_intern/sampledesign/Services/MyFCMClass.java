@@ -40,6 +40,7 @@ public class MyFCMClass extends FirebaseMessagingService
             String event_description = "0";
             String event_location = "0";
             String title = "0";
+            String attendance_points = "0";
 
 
             String M_view = "0";
@@ -51,6 +52,7 @@ public class MyFCMClass extends FirebaseMessagingService
                 event_description = remoteMessage.getData().get("event_description");
                 event_location = remoteMessage.getData().get("event_location");
                 title = remoteMessage.getData().get("title");
+                attendance_points = remoteMessage.getData().get("attendance_points");
 
                 M_view = remoteMessage.getData().get("M_view");
 
@@ -59,10 +61,10 @@ public class MyFCMClass extends FirebaseMessagingService
             String click_action = remoteMessage.getNotification().getClickAction();
 
             //Calling method to generate notification
-            sendNotification(event_id,event_date_time,event_location,event_description, title, M_view, click_action);
+            sendNotification(event_id,event_date_time,event_location,event_description, title, attendance_points, M_view, click_action);
         }
 
-        private void sendNotification(String event_id, String event_date_time, String event_location,String event_description,String title ,String M_view, String click_action)
+        private void sendNotification(String event_id, String event_date_time, String event_location,String event_description,String title , String attendance_points,String M_view, String click_action)
         {
             Intent intent = new Intent(click_action);
 
@@ -71,6 +73,7 @@ public class MyFCMClass extends FirebaseMessagingService
             intent.putExtra("event_location",event_location);
             intent.putExtra("title",title);
             intent.putExtra("event_description",event_description);
+            intent.putExtra("attendance_points",attendance_points);
 
             intent.putExtra("M_view", M_view);
 

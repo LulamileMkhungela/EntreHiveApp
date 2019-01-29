@@ -2,7 +2,9 @@ package com.example.academy_intern.sampledesign.Activities;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
@@ -10,6 +12,7 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -72,7 +75,7 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
             new LatLng(-40, -168), new LatLng(71, 136));
     private PlaceAutocompleteAdapter mPlaceAutocompleteAdapter;
     private GoogleApiClient mGoogleApiClient;
-    int day,month,year,hour,minute;
+    int day,month,year,hour,minute, eventId;
     int dayFinal,monthFinal,yearFinal,hourFinal,minuteFinal,seconds;
     private static final int PERMISSION_REQUEST_STORAGE = 2;
     private static final int PICK_IMAGE = 1;
@@ -84,8 +87,7 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
     public static boolean IS_USER_ADMIN;
     public static int LOGGED_IN_USER_ID;
     public static boolean IS_USER_LOGGED_IN;
-
-
+    ProgressDialog getEventIdProgress;
 
     //private PlaceAutocompleteFragment autocompleteFragment;
     @Override
@@ -109,6 +111,8 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
         btnBack = findViewById(R.id.btn_toolB);
         btn_attach_file = findViewById(R.id.btn_attach_file);
 
+        getEventIdProgress = new ProgressDialog(AddEvent.this);
+
         btn_attach_file.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +128,7 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
                                 PERMISSION_REQUEST_STORAGE);
 
                     }
-                    choosePhoto();
+                    chooseFile();
                 }
 
             }
@@ -133,8 +137,7 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent dashIntent = new Intent(AddEvent.this, UserDashboard.class);
-                startActivity(dashIntent);
+                AddEvent.super.onBackPressed();
             }
         });
 
@@ -156,7 +159,7 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
 
                 }
 
-                choosePhoto();
+                chooseFile();
             }
         });
 
@@ -178,41 +181,8 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
         btn_create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(v == btn_create) {
-                    if(uri != null) {
-                        try {
-                            File file = FileUtils.getFile(getApplicationContext(), uri);
-                            uploadMultipart(file);
-                            createEvent();
-                        }catch (Exception e){
-                            Toast.makeText(getApplicationContext(), "Error "+e, Toast.LENGTH_SHORT).show();
-                        }
-
-                        Toast.makeText(getApplicationContext(), "Your request was successfully submitted.", Toast.LENGTH_SHORT).show();
-
-                        if(IS_USER_ADMIN)
-                        {
-                            Intent adminIntent = new Intent(getApplicationContext(), AdminDashboard.class);
-                            startActivity(adminIntent);
-                        }
-
-                        else if (IS_USER_LOGGED_IN && LOGGED_IN_USER_ID != 0)
-                        {
-                            storeUserDetailsInString();
-                            Intent userIntent = new Intent(getApplicationContext(), UserDashboard.class);
-                            startActivity(userIntent);
-                        }
-
-                        else
-                        {
-                            Intent homeIntent = new Intent(getApplicationContext(), HomeActivity.class);
-                            startActivity(homeIntent);
-                        }
-
-                    }else{
-                        Toast.makeText(getApplicationContext(), "You must choose the file", Toast.LENGTH_SHORT).show();
-                    }
-                }
+                createEvent();
+              messageDialog(AddEvent.this, "Create Event", "Your event request has been submitted.");
             }
         });
 
@@ -265,6 +235,9 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
     }
     public void createEvent()
     {
+        getEventIdProgress.setMessage("Sending event details...");
+        getEventIdProgress.show();
+
         //initializing my values so that i
         String title = edtTitle.getText().toString().trim();
         String description = txt_mesaj.getText().toString().trim();
@@ -284,14 +257,17 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
             txt_mesaj.requestFocus();
         }
         //implementing a post request from my api interface that helps me push my data to the server then server
-        Call<Void> call = Api.getClient().addEvent(title, description, venue, MainActivity.LOGGED_IN_USER_ID, DateTime);
-        call.enqueue(new Callback<Void>() {
+        Call<Integer> call = Api.getClient().addEvent(title, description, venue, MainActivity.LOGGED_IN_USER_ID, DateTime);
+        call.enqueue(new Callback<Integer>()
+        {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
-
+            public void onResponse(Call<Integer> call, Response<Integer> response)
+            {
+                eventId = response.body();
+                getEventIdProgress.dismiss();
             }
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<Integer> call, Throwable t) {
                 Log.d("Failure:", "onFailure: failed to add event");
             }
         });
@@ -305,7 +281,7 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
 //upload a files
 
 
-    private void choosePhoto()
+    private void chooseFile()
     {
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED
@@ -363,7 +339,7 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
         RequestBody action = RequestBody.create(MediaType.parse("text/plain"), TYPE_1);
         uploadService = new UploadService();
-        uploadService.uploadFileEventMultipart(LOGGED_IN_USER_ID, action, fileToUpload, new Callback() {
+        uploadService.uploadFileEventMultipart(eventId, action, fileToUpload, new Callback() {
             @Override
             public void onResponse(Call call, Response response) {
                 BaseResponse baseResponse = (BaseResponse) response.body();
@@ -377,5 +353,67 @@ public class AddEvent extends AppCompatActivity  implements DatePickerDialog.OnD
             }
         });
     }
+
+    private void messageDialog(Activity activity, String title, String message)
+    {
+        AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        if(uri != null) {
+                            try {
+                                File file = FileUtils.getFile(getApplicationContext(), uri);
+                                uploadMultipart(file);
+                            } catch (Exception e) {
+                                Toast.makeText(getApplicationContext(), "Error " + e, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else{
+                            uploadDocumentDialog(AddEvent.this);
+                        }
+
+                        if(IS_USER_ADMIN)
+                        {
+                            Intent adminIntent = new Intent(getApplicationContext(), AdminDashboard.class);
+                            startActivity(adminIntent);
+                        }
+
+                        else if (IS_USER_LOGGED_IN && LOGGED_IN_USER_ID != 0)
+                        {
+                            storeUserDetailsInString();
+                            Intent userIntent = new Intent(getApplicationContext(), UserDashboard.class);
+                            startActivity(userIntent);
+                        }
+
+                        else
+                        {
+                            Intent homeIntent = new Intent(getApplicationContext(), HomeActivity.class);
+                            startActivity(homeIntent);
+                        }
+                    }
+                });
+        alertDialog.setIcon(R.drawable.success);
+        alertDialog.show();
+    }
+
+    private void uploadDocumentDialog(Activity activity)
+    {
+        final AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+        alertDialog.setTitle("Upload File");
+        alertDialog.setMessage("Please upload a .pdf document.");
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        alertDialog.dismiss();
+                    }
+                });
+        alertDialog.setIcon(R.drawable.funds);
+        alertDialog.show();
+    }
+
 
 }

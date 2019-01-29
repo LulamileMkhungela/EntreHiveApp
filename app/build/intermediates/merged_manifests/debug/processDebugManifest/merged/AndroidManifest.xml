@@ -34,7 +34,6 @@
         android:label="@string/app_name"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -85,6 +84,7 @@
         <activity android:name="com.example.academy_intern.sampledesign.Activities.UserEventDocuments" />
         <activity android:name="com.example.academy_intern.sampledesign.Activities.AddAdminActivity" />
         <activity android:name="com.example.academy_intern.sampledesign.Activities.EventQRCode" />
+        <activity android:name="com.example.academy_intern.sampledesign.Activities.TopUsers" />
         <!--
              FirebaseMessagingService performs security checks at runtime,
              no need for explicit permissions despite exported="true"

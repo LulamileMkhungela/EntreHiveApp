@@ -45,7 +45,7 @@ public class UploadService {
 
     public void uploadFileEventMultipart(int userId, RequestBody action, MultipartBody.Part file, Callback callback)
     {
-        uploadInterface.uploadEventFile(userId ,file).enqueue(callback);
+        uploadInterface.uploadEventFile(userId,file).enqueue(callback);
     }
 
     public void uploadPhotoMultipart(int userId, RequestBody action, MultipartBody.Part photo, Callback callback)

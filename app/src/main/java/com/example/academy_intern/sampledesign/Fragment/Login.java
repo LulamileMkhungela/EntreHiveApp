@@ -1,12 +1,15 @@
 package com.example.academy_intern.sampledesign.Fragment;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -73,7 +76,6 @@ public class Login extends Fragment {
 
                 if(validateEmail()&&validatePass())
                 {
-
                     login();
                 }
             }
@@ -161,9 +163,7 @@ public class Login extends Fragment {
             @Override
             public void onResponse(Call <UserProfile> call, Response <UserProfile> response)
             {
-//                String successMessage = response.body().getName() + ", you have successfully logged in!";
                 String failMessage = "You have failed to log in! \nPlease try again.";
-                //response.body().getName() != null
 
                 if (response.code() == 200)
                 {
@@ -177,7 +177,6 @@ public class Login extends Fragment {
                     IS_USER_ADMIN = sessionManager.getUserRole();
                     LOGGED_IN_USER_ID = sessionManager.getLoggedInId();
                     storeUserDetailsInString();
-//                    storeUserDetailsInHashMap();
 
                     if(IS_USER_ADMIN)
                     {
@@ -194,7 +193,7 @@ public class Login extends Fragment {
                 }
                 else
                 {
-                    Toast.makeText(getActivity(), failMessage, Toast.LENGTH_LONG).show();
+                    failedLoginDialog(getActivity(), failMessage);
                     getFragmentManager().beginTransaction().replace(R.id.display, new Login()).commit();
                 }
             }
@@ -205,5 +204,23 @@ public class Login extends Fragment {
                 Log.d("response", t.getStackTrace().toString());
             }
         });
+    }
+
+    private void failedLoginDialog(Activity activity, String message)
+    {
+        final AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+        alertDialog.setTitle("Login Unsuccessful");
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        alertDialog.dismiss();
+                    }
+                });
+
+        alertDialog.setIcon(R.drawable.funds);
+        alertDialog.show();
+
     }
 }

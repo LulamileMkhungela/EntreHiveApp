@@ -124,9 +124,9 @@ public class Scanner extends Fragment implements ZXingScannerView.ResultHandler
         {
             String eventIdAndPoints = rawResult.getText(); //event id and attendance points are separated by a comma (,)
             String[] eventIdAndPointsArray = eventIdAndPoints.split(",");
-            event.setUserId(Integer.valueOf(eventIdAndPointsArray[0]));
+            event.setEventId(Integer.valueOf(eventIdAndPointsArray[0]));
             event.setAttendancePoints(Integer.valueOf(eventIdAndPointsArray[1]));
-            attendEvent();
+            welcomeMessageDialog(getActivity(), "Confirm Attendance", "Would you like to attend this event?");
         }
         else
         {
@@ -195,15 +195,22 @@ public class Scanner extends Fragment implements ZXingScannerView.ResultHandler
             {
                 String successMessage = "Welcome to the event.";
                 String failMessage = "You do not have permission to attend this event.";
+                String alreadyAccessedMessage = "You've already accessed the venue. \nYou will not receive additional points.";
 
-                if (response.body().getUserId() != 0)
+                if (response.body().getUserId() == 0)
                 {
-                    USER_BALANCE = USER_BALANCE + attendancePoints;
-                    messageDialog(getActivity(), "Welcome", successMessage);
+                    messageDialog(getActivity(), "Not Invited", failMessage);
+
+                }
+                else if (response.body().getUserId() == -1)
+                {
+                    messageDialog(getActivity(), "Already Accessed", alreadyAccessedMessage);
                 }
                 else
                 {
-                    messageDialog(getActivity(), "Not Invited", failMessage);
+                    USER_BALANCE = USER_BALANCE + attendancePoints;
+                    storeUserDetailsInString();
+                    messageDialog(getActivity(), "Welcome", successMessage);
                 }
             }
 
@@ -214,9 +221,9 @@ public class Scanner extends Fragment implements ZXingScannerView.ResultHandler
 
             }
         };
-        Api.getClient().allowUserAccess(LOGGED_IN_USER_ID, eventId, attendancePoints).enqueue(responseCallback);
+        Api.getClient().allowUserAccess(LOGGED_IN_USER_ID, eventId).enqueue(responseCallback);
         mScannerView.stopCamera();
-        goBackToDashboard();
+//        goBackToDashboard();
     }
 
     private void goBackToDashboard()
@@ -255,6 +262,28 @@ public class Scanner extends Fragment implements ZXingScannerView.ResultHandler
         alertDialog.show();
     }
 
+    private void welcomeMessageDialog(Activity activity, String title, String message)
+    {
+        AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(message);
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Confirm",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        attendEvent();
+                    }
+                });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which)
+                    {
+                        goBackToDashboard();
+                    }
+                });
+        alertDialog.show();
+    }
+
     private void messageDialog(Activity activity, String title, String message)
     {
         AlertDialog alertDialog = new AlertDialog.Builder(activity).create();
@@ -267,10 +296,8 @@ public class Scanner extends Fragment implements ZXingScannerView.ResultHandler
                         goBackToDashboard();
                     }
                 });
-        alertDialog.setIcon(R.drawable.success);
+//        alertDialog.setIcon(R.drawable.success);
         alertDialog.show();
-
-
     }
 
     private void insufficientFundsDialog(Activity activity, String title, String message)

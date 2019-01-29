@@ -76,7 +76,7 @@ public class BusinessCertificate extends AppCompatActivity {
             {
                 if(v == tv_attach_file)
                 {
-                    choosePhoto();
+                    chooseFile();
                 }
             }
         });
@@ -96,13 +96,13 @@ public class BusinessCertificate extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "You must choose the file", Toast.LENGTH_SHORT).show();
+                //    Toast.makeText(getApplicationContext(), "You must choose the file", Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    private void choosePhoto() {
+    private void chooseFile() {
         if (ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -132,7 +132,7 @@ public class BusinessCertificate extends AppCompatActivity {
                 BaseResponse baseResponse = (BaseResponse) response.body();
                 if(baseResponse != null) {
                     uploadProgress.dismiss();
-                    Toast.makeText(getApplicationContext(),"You have successfully uploaded", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(getApplicationContext(),"You have successfully uploaded", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override

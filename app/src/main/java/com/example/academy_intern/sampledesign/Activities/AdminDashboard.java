@@ -10,21 +10,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupMenu;
+import android.widget.Toast;
 
+import com.example.academy_intern.sampledesign.ApiConnection.Api;
 import com.example.academy_intern.sampledesign.Fragment.Admin_Events;
 import com.example.academy_intern.sampledesign.Fragment.Admin_Points;
 import com.example.academy_intern.sampledesign.Fragment.Admin_Users;
 import com.example.academy_intern.sampledesign.R;
 import com.example.academy_intern.sampledesign.Services.SessionManager;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class AdminDashboard extends AppCompatActivity {
 
    Button btnpopupmenu;
-EditText searchBox;
-
+   EditText searchBox;
 
     @Override
 
@@ -32,6 +38,8 @@ EditText searchBox;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dashboard);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
 //        Toolbar toolbar = findViewById(R.id.toolbar);
 //        toolbar.setTitle("Admin Dashboard");
@@ -99,6 +107,11 @@ EditText searchBox;
                             case R.id.add_admin:
                                 Intent profile = new Intent(AdminDashboard.this, AddAdminActivity.class);
                                 startActivity(profile);
+                                return true;
+
+                            case R.id.leaderboard:
+                                Intent topUsersIntent = new Intent(getApplicationContext(), TopUsers.class);
+                                startActivity(topUsersIntent);
                                 return true;
 
                             case R.id.logout:

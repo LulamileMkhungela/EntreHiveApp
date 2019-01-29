@@ -33,12 +33,16 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/userEvent/subscribeToEvent")
-    Call<Void> subscribeToEvent(@Field("userId") int userId, @Field("eventId") int eventId);
+    Call<String> subscribeToEvent(@Field("userId") int userId, @Field("eventId") int eventId);
+
+    @FormUrlEncoded
+    @POST("/userEvent/cancelAttendance")
+    Call<String> cancelAttendance(@Field("userId") int userId, @Field("eventId") int eventId);
 
     @FormUrlEncoded
     @POST("/event/acceptEvent")
     Call<EventProfile> acceptEvent(@Field("eventId") String eventId,
-                           @Field("number_of_people") int number_of_people);
+                           @Field("number_of_people") int number_of_people, @Field("attendance_points") int attendance_points);
 
     @FormUrlEncoded
     @POST("/user/registerUser")
@@ -59,7 +63,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/event/save")
-    Call<Void>addEvent(@Field("eventTitle") String eventTitle,
+    Call<Integer>addEvent(@Field("eventTitle") String eventTitle,
                        @Field("eventDescription") String eventDescription,
                        @Field("eventLocation") String eventLocation,
                        @Field("userId") int id ,
@@ -116,7 +120,7 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("/userEvent/attendingEvent")
-    Call<EventProfile> allowUserAccess(@Field("userId") int userId, @Field("eventId") int eventId, @Field("attendancePoints") int attendancePoints);
+    Call<EventProfile> allowUserAccess(@Field("userId") int userId, @Field("eventId") int eventId);
 
 //    @Multipart
 //    @POST("/uploadFile")
@@ -166,6 +170,9 @@ public interface ApiInterface {
     @POST("/adminWallet/updateUserWallet")
     Call<String>updateWallet(@Field("points") int points);
 
+    @GET("/adminWallet/getAdminBalance")
+    Call<String> getBalance();
+
     @GET("/document/getDownloadLinks")
     Call<ArrayList<String>> getDownloadLinks(@Query("userId") int userId);
 
@@ -173,16 +180,19 @@ public interface ApiInterface {
     Call<ArrayList<String>> getDocumentNames(@Query("userId") int userId);
 
     @GET("/document/getEventDownloadLinks")
-    Call<ArrayList<String>> getEventDownloadLinks(@Query("userId") int userId);
+    Call<ArrayList<String>> getEventDownloadLinks(@Query("eventId") int eventId);
 
     @GET("/document/getEventDocumentNames")
-    Call<ArrayList<String>> getEventDocumentNames(@Query("userId") int userId);
+    Call<ArrayList<String>> getEventDocumentNames(@Query("eventId") int eventId);
 
     @GET("/event/getMyEvents")
     Call<ArrayList<EventProfile>> getMyEvents(@Query("userId") int userId);
 
     @GET("/user/getTransactionHistory")
     Call<ArrayList<ItemProfile>> getTransactionHistory(@Query("userId") int userId);
+
+    @GET("/user/getTopUsers")
+    Call<ArrayList<UserProfile>> getTopUsers();
 
     @FormUrlEncoded
     @POST("/user/updateStatus")
@@ -199,4 +209,8 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("/user/makePurchase")
     Call<UserProfile> makePurchase(@Field("userId") int userId, @Field("itemName") String itemName, @Field("itemPrice") int itemPrice);
+
+    @FormUrlEncoded
+    @POST("/user/payUser")
+    Call<String> allocatePoints(@Field("email") String email, @Field("points") int points);
 }
