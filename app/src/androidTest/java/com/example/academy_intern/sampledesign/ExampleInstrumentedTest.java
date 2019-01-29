@@ -1,3 +1,4 @@
+// Refactor component structure
 package com.example.academy_intern.sampledesign;
 
 import android.content.Context;
