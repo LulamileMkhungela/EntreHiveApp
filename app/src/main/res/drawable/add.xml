@@ -1,3 +1,4 @@
+<!-- Layout view structure -->
 <vector
     android:height="50dp"
     android:tint="@color/white"
