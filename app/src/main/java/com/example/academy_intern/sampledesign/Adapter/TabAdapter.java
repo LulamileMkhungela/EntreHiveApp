@@ -1,4 +1,5 @@
 // Refactor component structure
+// Refactor component structure
 package com.example.academy_intern.sampledesign.Adapter;
 
 import android.support.annotation.Nullable;
