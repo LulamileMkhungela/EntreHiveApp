@@ -3,6 +3,7 @@
 // Refactor component structure
 // Refactor component structure
 // Refactor component structure
+// Refactor component structure
 package com.example.academy_intern.sampledesign.Model;
 
 import android.os.Parcelable;
