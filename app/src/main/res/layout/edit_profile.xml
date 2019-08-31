@@ -4,6 +4,7 @@
 <!-- Layout view structure -->
 <!-- Layout view structure -->
 <!-- Layout view structure -->
+<!-- Layout view structure -->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/edit_frag_profile"
