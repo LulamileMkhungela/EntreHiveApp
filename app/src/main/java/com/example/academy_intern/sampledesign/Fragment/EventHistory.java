@@ -4,6 +4,7 @@
 // Refactor component structure
 // Refactor component structure
 // Refactor component structure
+// Refactor component structure
 package com.example.academy_intern.sampledesign.Fragment;
 
 import android.os.Bundle;
