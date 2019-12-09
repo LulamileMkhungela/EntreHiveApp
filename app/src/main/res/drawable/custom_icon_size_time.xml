@@ -7,6 +7,7 @@
 <!-- Layout view structure -->
 <!-- Layout view structure -->
 <!-- Layout view structure -->
+<!-- Layout view structure -->
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
     android:src="@drawable/time"
     android:scaleType = "fitXY"
