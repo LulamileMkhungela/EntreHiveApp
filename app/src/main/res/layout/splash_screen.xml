@@ -7,6 +7,7 @@
 <!-- Layout view structure -->
 <!-- Layout view structure -->
 <!-- Layout view structure -->
+<!-- Layout view structure -->
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/splash"
     android:layout_width="match_parent"
